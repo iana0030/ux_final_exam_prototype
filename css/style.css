@@ -70,10 +70,14 @@ main > section {
 
 /********************* AD *********************/
 
-.ad_banner{
+.advertisement{
     background-color: var(--colorAD);
-    width: 500px;
-    height: 800px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
 }
 
 
@@ -388,6 +392,8 @@ img {
 
     #main_recipes .advertisement {
         grid-area: ad;
+        height: 600px;
+        align-self: center;
     }
 
     #main_recipes aside button{
