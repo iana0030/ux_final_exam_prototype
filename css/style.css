@@ -340,24 +340,57 @@ img {
         padding: 1rem 0;
     }
 
+    .desktop_nav a i {
+        margin: 0 0.3rem;
+    }
+
     .logo {
         width: 15vw;
+    }
+
+    .logo img {
+        width: 100%;
     }
 
     .mobile_nav {
         display: none;
     }
-    /* main {
-        display: grid;
-        grid-template-areas: 
-        "about about about"
-        "aside popular ad"
-        "aside daily ad";
-    } */
+
+    .account_utility a {
+        margin: 0 0.3rem;
+        padding: 0.3rem 1rem;
+        border-radius: var(--borderRadius);
+        background-color: var(--colorUtilityButton);
+    }
+
+    .searchBar {
+        width: 20vw;
+        display: flex;
+        gap: 0.3rem;
+    }
+
+    footer {
+        justify-content: space-evenly;
+        padding-top: 5rem;
+        gap: 2rem;
+    }
+
+    .SoMe {
+        font-size: 1.1rem;
+    }
+
+    .SoMe i {
+        margin: 0 0.2rem;
+    }
+
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
 
     main > section {
-        max-width: 1500px;
-        margin: 2rem auto 0 auto;
+        margin: 2rem;
     }
 
     #about {
@@ -374,7 +407,7 @@ img {
 
     #main_recipes {
         display: grid;
-        column-gap: 5rem;
+        column-gap: 2rem;
         grid-template-areas: 
         "aside popular popular ad"
         "aside daily daily ad";
@@ -387,10 +420,13 @@ img {
 
     #main_recipes .popular_recipes_container {
         margin-bottom: 2rem;
+        padding-left: 2rem;
         grid-area: popular;
     }
 
     #main_recipes .plat_du_tour_container {
+        margin-bottom: 2rem;
+        padding-left: 2rem;
         grid-area: daily;
     }
 
@@ -408,12 +444,12 @@ img {
     }
 
     .popular_recipes, .plat_du_tour {
-        width: 45vw;
-        overflow-x:unset;
+        overflow-x: unset;
     }
 
     .recipe, .daily_recipe {
         min-width: 15vw;
+        width: 15vw;
         margin-right: 2rem;
     }
 
