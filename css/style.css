@@ -356,13 +356,15 @@ img {
     } */
 
     main > section {
-        margin-top: 2rem;
+        max-width: 1500px;
+        margin: 2rem auto 0 auto;
     }
 
     #about {
         display: grid;
         grid-template-columns: 1fr 1fr;
         place-items: center;
+        margin-bottom: 5rem
         /* grid-area: about; */
     }
 
@@ -372,6 +374,7 @@ img {
 
     #main_recipes {
         display: grid;
+        column-gap: 5rem;
         grid-template-areas: 
         "aside popular popular ad"
         "aside daily daily ad";
@@ -379,6 +382,7 @@ img {
 
     #main_recipes .sidebar_buttons {
         grid-area: aside;
+        margin: 0 1rem;
     }
 
     #main_recipes .popular_recipes_container {
@@ -392,8 +396,10 @@ img {
 
     #main_recipes .advertisement {
         grid-area: ad;
+        width: 200px;
         height: 600px;
         align-self: center;
+        margin: 0 1rem;
     }
 
     #main_recipes aside button{
