@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="255" viewBox="0 0 500 255">
+  <defs>
+    <clipPath id="clip-Yummy_face_text">
+      <rect width="500" height="255"/>
+    </clipPath>
+  </defs>
+  <g id="Yummy_face_text" clip-path="url(#clip-Yummy_face_text)">
+    <g id="Group_2" data-name="Group 2" transform="translate(-17.352 -130.914)" opacity="0.4">
+      <path id="Path_2" data-name="Path 2" d="M36,2.82C51.693,2.237,63.289,9.9,72.059,27.942S79.1,70.1,75.051,82.083s-16.329,18.992-37.868,18.992c-14.948,0-16.931,8.574-23.617-4.037C10.819,91.86,8.107,73.567,8.107,73.567L5.6,41.6C5.6,20.061,20.316,3.4,36,2.82Z" transform="translate(277.063 220.33) rotate(-47)" fill="#ffb291"/>
+      <path id="Path_3" data-name="Path 3" d="M47,38S36.294,24.45,24.544,14.95A117.087,117.087,0,0,0,0,0" transform="translate(330.5 214.5)" fill="none" stroke="#ffebad" stroke-linecap="round" stroke-width="1"/>
+      <path id="Path_1" data-name="Path 1" d="M1.993,250s10.619,96.623,126.763,97.541S265.215,250,265.215,250" transform="translate(125.359 -19.137)" fill="none" stroke="#481620" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" opacity="0.8"/>
+    </g>
+    <text id="Recipes_Yes_please_" data-name="Recipes?
+Yes please!" transform="translate(19 -11)" fill="#ffebad" font-size="120" font-family="Lato-Black, Lato" font-weight="800"><tspan x="0" y="118">Recipes?</tspan><tspan fill="#d6ffad" font-size="91.5"><tspan x="0" y="234">Yes please!</tspan></tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="381" height="210" viewBox="0 0 381 210">
+  <defs>
+    <clipPath id="clip-Logo">
+      <rect width="381" height="210"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" clip-path="url(#clip-Logo)">
+    <g id="Group_1" data-name="Group 1" transform="translate(1 -11.5)">
+      <text id="Delicacy" transform="translate(0 0.5)" fill="#481620" font-size="100" font-family="Shelley-AllegroScript, Shelley Allegro Script"><tspan x="0" y="89">Delicacy</tspan></text>
+      <text id="Corner" transform="translate(134 112.5)" fill="#481620" font-size="100" font-family="Shelley-AllegroScript, Shelley Allegro Script"><tspan x="0" y="89">Corner</tspan></text>
+    </g>
+  </g>
+</svg>
