@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/815e91b325.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <title>Edit Profile | Delicacy Corner</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="desktop_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
+                    <ul class="dropdown_content">
+                        <li>All recipes</li>
+                        <li>Cuisine Recipes</li>
+                        <li>Holiday Recipes</li>
+                        <li>Meal recipes</li>
+                        <li>Special Diet Recipes</li>
+                    </ul>
+                </div>
+                <a href="#"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="account_utility">
+                    <a href="#">Profile</a>
+                    <ul class="dropdown_content">
+                        <li><a href="./profile.html">View profile</a></li>
+                        <li><a href="./edit_profile.html">Edit profile</a></li>
+                        <li>Delete profile</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="mobile_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <i id="menubutton" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+            <div class="menu_items hidden">
+                <ul>
+                    <li><a href="#">Explore</a>
+                        <ul>
+                            <li>All Recipes</li>
+                            <li>Cuisine Recipes</li>
+                            <li>Holiday Recipes</li>
+                            <li>Meal recipes</li>
+                            <li>Special Diet Recipes</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href="./profile.html">View profile</a></li>
+                            <li><a href="./edit_profile.html">Edit profile</a></li>
+                            <li>Delete profile</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<main id="edit_user_profile">
+    <section class="user_info">
+        <div>
+            <img class="user_pfp" src="../images/johan.png" alt="Profile picture">
+            <button>Change picture</button>
+        </div>
+        <div>
+            <label for="full_name">Full name:</label>
+            <input name="full_name" type="text" placeholder="Johan Bruun">
+            <label for="user_email">Email:</label>
+            <input name="user_email" type="text" placeholder="jbruun@email.dk">
+            <label for="user_name">Username:</label>
+            <input name="user_name" type="text" placeholder="johanbruun">
+            <label for="bio">Bio:</label>
+            <textarea name="bio" id="bio" cols="30" rows="10">I like cooking and making desserts for me and my partner. I will be uploading health-safe recipes here.</textarea>
+        </div>
+        <button type="submit">Save changes</button>
+    </section>
+
+</main>
+
+
+<footer>
+    <section class="SoMe">
+        <i class="fa-brands fa-facebook-square fa-xl"></i>
+        <i class="fa-brands fa-twitter-square fa-xl"></i>
+        <i class="fa-brands fa-instagram-square fa-xl"></i>
+        <i class="fa-solid fa-square-envelope fa-xl"></i>
+    </section>
+    <section class="info_links">
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Terms of service</a>
+        <a href="#">FAQ</a>
+    </section>
+    <section class="copyright">
+        <p>&copy; 2022 KEA Web Development - Group H</p>
+    </section>
+</footer>
+
+</body>
+</html>
