@@ -3,9 +3,21 @@
     --borderRadius: 20px;
     --colorBoxShadow: #693b1627;
 }
+
+main {
+    min-height: 80vh;
+}
+
 /********************* ADVERTISEMENTS *********************/
 .all_recipes_ad_section {
     display: flex;
+}
+
+/********************* CATEGORY SEARCH INFORMATION *********************/
+.category_search {
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 /********************* ALL RECIPE CARD AND LAYOUT *********************/
