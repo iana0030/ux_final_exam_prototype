@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/815e91b325.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <title>Create recipe | Delicacy Corner</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="desktop_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
+                    <ul class="dropdown_content">
+                        <li>All recipes</li>
+                        <li>Cuisine Recipes</li>
+                        <li>Holiday Recipes</li>
+                        <li>Meal recipes</li>
+                        <li>Special Diet Recipes</li>
+                    </ul>
+                </div>
+                <a href="#"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="account_utility">
+                    <a href="#">Profile</a>
+                    <ul class="dropdown_content">
+                        <li><a href="./profile.html">View profile</a></li>
+                        <li><a href="./edit_profile.html">Edit profile</a></li>
+                        <li>Delete profile</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="mobile_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <i id="menubutton" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+            <div class="menu_items hidden">
+                <ul>
+                    <li><a href="#">Explore</a>
+                        <ul>
+                            <li>All Recipes</li>
+                            <li>Cuisine Recipes</li>
+                            <li>Holiday Recipes</li>
+                            <li>Meal recipes</li>
+                            <li>Special Diet Recipes</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href="./profile.html">View profile</a></li>
+                            <li><a href="./edit_profile.html">Edit profile</a></li>
+                            <li>Delete profile</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<main id="create_recipe_page">
+    <h1>Create your own recipe</h1>
+    <hr>
+    <form>
+        <fieldset class="recipe_info_input">
+            <legend>General information</legend>
+            <div class="img_preview">Upload your images</div>
+            <fieldset>
+                <div>
+                    <label for="recipe_name">Name:</label>
+                    <input name="recipe_name" type="text" id="recipe_name" placeholder="Add name of recipe">
+                </div>
+
+                <div>
+                    <label for="recipe_description">Description:</label>
+                    <input name="recipe_description" type="text" id="recipe_description" placeholder="Add description of recipe">
+                </div>
+
+                <div>
+                    <label for="recipe_nutrition_facts">Nutrition facts:</label>
+                    <input name="recipe_nutrition_facts" type="text" id="recipe_nutrition_facts" placeholder="Add nutrition facts">
+                </div>
+
+            </fieldset>
+
+                <fieldset>
+                    <legend>Time to prepare:</legend>
+                    <div>
+                        <label for="recipe_prep_time">Prep time:</label>
+                        <input name="recipe_prep_time" type="time" id="recipe_prep_time">
+                    </div>
+
+                    <div>
+                        <label for="recipe_cook_time">Cook time:</label>
+                        <input name="recipe_cook_time" type="time" id="recipe_cook_time">
+                    </div>
+
+                    <div>
+                        <label for="recipe_servings">Servings:</label>
+                        <input name="recipe_servings" type="number" id="recipe_servings" min="1" placeholder="Add number of servings">
+                    </div>
+
+                    <div>
+                        <label for="recipe_yield">Yields:</label>
+                        <input name="recipe_yield" type="number" id="recipe_yield" min="0" placeholder="Add yield">
+                    </div>
+                </fieldset>
+        </fieldset>
+
+        <hr>
+
+        <fieldset class="recipe_content_input">
+            <fieldset class="recipe_ingredients_input">
+                <legend>Add your ingredients:</legend>
+                <div class="recipe_ingredients">
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="btn_container">
+                    <button><i class="fa-solid fa-square-plus"></i></button>
+                </div>
+            </fieldset>
+
+            <fieldset class="recipe_directions_input">
+                <legend>Directions:</legend>
+                <div>
+                    <label for="step_1">Step 1:</label>
+                    <textarea name="step_1" id="step_1"></textarea>
+                </div>
+
+                <div>
+                    <label for="step_2">Step 2:</label>
+                    <textarea name="step_2" id="step_2"></textarea>
+                </div>
+
+                <div class="btn_container">
+                    <button><i class="fa-solid fa-square-plus"></i></button>
+                </div>
+            </fieldset>
+        </fieldset>
+        <hr>
+        <button type="submit"><i class="fa-solid fa-square-plus"></i> Upload recipe</button>
+    </form>
+</main>
+
+
+<footer>
+    <section class="SoMe">
+        <i class="fa-brands fa-facebook-square fa-xl"></i>
+        <i class="fa-brands fa-twitter-square fa-xl"></i>
+        <i class="fa-brands fa-instagram-square fa-xl"></i>
+        <i class="fa-solid fa-square-envelope fa-xl"></i>
+    </section>
+    <section class="info_links">
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Terms of service</a>
+        <a href="#">FAQ</a>
+    </section>
+    <section class="copyright">
+        <p>&copy; 2022 KEA Web Development - Group H</p>
+    </section>
+</footer>
+
+</body>
+</html>
