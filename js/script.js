@@ -1,6 +1,7 @@
 
 document.querySelector("#menubutton").addEventListener("click", openMenu);
-
+document.querySelector(".searchBar").addEventListener("click", openCategoryPopup)
+document.querySelector(".searchBar").addEventListener("focusout", openCategoryPopup)
 
 function openMenu(){
     document.querySelector("#menubutton").classList.toggle("fa-bars");
@@ -10,3 +11,6 @@ function openMenu(){
     document.querySelector(".menu_items").classList.toggle("hidden");
 };
 
+function openCategoryPopup() {
+    document.querySelector(".category-popup").classList.toggle("hidden")
+}
