@@ -10,24 +10,12 @@
     <title>Welcome to Delicacy Corner! A place for yummy recipes all around</title>
 </head>
 <body>
-    <!-- Popup window -->
-    <div class="category-popup hidden">
-        <h3>Categories</h3>
-
-        <div class="category_list">
-            <a href="./category-recipes-page.html">
-                <p>Asian</p>
-            </a>
-            <p>Breakfasts</p>
-        </div>
-    </div>
-
     <header>
         <nav>
             <div class="desktop_nav">
-                <div class="logo"><a href="#"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div class="logo"><a href="./index.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
                 <div>
-                    <a href="./categories-page.html"><i class="fa-solid fa-list-ul"></i>Explore</a>
+                    <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
                     <ul class="dropdown_content">
                         <li>All recipes</li>
                         <li>Cuisine Recipes</li>
@@ -43,9 +31,9 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div class="account_utility">
-                    <a href="./login.html">Login</a>
-                    <a href="./signup.html">Signup</a>
+                <div style="display: flex; max-width: 30%;" class="account_utility">
+                    <a href="#"><img src="../svgs/user.svg" alt="user"></a>
+                    <a href="./index.html">logout</a>
                 </div>
             </div>
 
@@ -62,7 +50,7 @@
             </div>
             <div class="menu_items hidden">
                 <ul>
-                    <li><a href="./categories-page.html">Explore</a>
+                    <li><a href="#">Explore</a>
                         <ul>
                             <li>All Recipes</li>
                             <li>Cuisine Recipes</li>
@@ -103,7 +91,7 @@
             <h2>Popular Recipes</h2>
             <div class="popular_recipes">
                 <article class="recipe">
-                    <img src="../images/Blueberry_muffins.jpg" alt="Blueberry muffins">
+                    <a href="./recipe.html"><img src="../images/vegburger.png" alt="Blueberry muffins"></a>
                     <div class="name">
                         <h3>Name</h3>
                     </div>
@@ -173,7 +161,7 @@
         </section>
         
         <section class="plat_du_tour_container">
-            <h2>Plat du Tour</h2>
+            <h2>Plat du Jour</h2>
             <div class="plat_du_tour">
                 <article class="daily_recipe">
                     <img src="../images/ben-kolde-FFqNATH27EM-unsplash.jpg" alt="Picture of toast with egg by Ben Kolde">
