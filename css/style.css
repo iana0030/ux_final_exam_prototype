@@ -80,12 +80,22 @@ main > section {
     font-size: 4rem;
 }
 
-
+/********************* NAVBAR AND FOOTER *********************/
+.category-popup {
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
+    background-color: white;
+    position: absolute;
+    left: 58vw;
+    top: 10vh;
+    width: 15vw;
+    padding: 1rem 2rem;
+}
 
 
 /********************* NAVBAR AND FOOTER *********************/
 
-nav div > a, footer a {
+nav div > a, footer a, .category-popup a {
     text-decoration: none;
     font-family: var(--fontLinks);
     font-weight: var(--fontWeightLinks);
