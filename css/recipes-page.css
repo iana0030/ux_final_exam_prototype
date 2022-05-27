@@ -1,0 +1,98 @@
+:root {
+    --borderProperties: 1px solid grey;
+    --borderRadius: 20px;
+    --colorBoxShadow: #693b1627;
+}
+/********************* ADVERTISEMENTS *********************/
+.all_recipes_ad_section {
+    display: flex;
+}
+
+/********************* ALL RECIPE CARD AND LAYOUT *********************/
+.all_recipe_recipe {
+    margin-top: 5vh;
+    width: 80%;
+    max-width: 350px;
+    border: var(--borderProperties);
+    margin-left: 10%;
+    padding: 1rem 1rem 0 1rem;
+    border-radius: var(--borderRadius);
+    display: flex;
+}
+
+.all_recipe_recipe img {
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    box-shadow: 3px 6px 5px var(--colorBoxShadow);
+    max-width: 200px;
+}
+
+.all_recipe_recipe_left_section {
+    width: 35vw;
+}
+
+.all_recipe_recipe_right_section {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    margin-left: 5vw;
+}
+
+.all_recipe_recipe_right_section .recipe_info {
+    height: 100%;
+}
+
+.all_recipe_recipe_right_section .recipe_info h3 {
+    width: 90%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.all_recipe_recipe_right_section .recipe_info .rating,
+.all_recipe_recipe_right_section .recipe_info .difficulty {
+    width: 15vw;
+    max-width: 60px;
+}
+
+.all_recipe_recipe_right_section .recipe_info .difficulty {
+    margin-left: 1.5vw;
+}
+
+/********************* MEDIA QUERIES *********************/
+@media only screen and (min-width: 1000px){
+    .all_recipe_recipe img {
+        min-width: 160px;
+        width: 160px;
+    }
+
+    .all_recipe_recipe_right_section {
+        margin-left: 0;
+    }
+
+    .all_recipe_recipe_right_section .recipe_info .rating,
+    .all_recipe_recipe_right_section .recipe_info .difficulty {
+        width: 10vw;
+    }
+
+    .all_recipe_recipe_right_section .recipe_info .comment,
+    .all_recipe_recipe_right_section .recipe_info .time {
+        width: 50px;
+    }
+
+    .all_recipe_recipe_right_section .recipe_info .difficulty {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .all_recipes_recipes_section {
+        width: 1400px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .all_recipe_recipe {
+        margin-left: 0;
+    }
+}
