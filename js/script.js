@@ -51,13 +51,13 @@ let ounceBtn = document.getElementById('ounce');
 
 gramBtn.addEventListener('click', function () {
     let input = document.getElementById('input').value;
-    document.getElementById('output').value = input / 28.34952;
+    document.getElementById('output').value = (input / 28.34952).toFixed(2);
 
 });
 
 ounceBtn.addEventListener('click', function () {
     let input = document.getElementById('input').value;
-    document.getElementById('output').value = input * 28.34952;
+    document.getElementById('output').value = (input * 28.34952).toFixed(2);
 
 });
 
