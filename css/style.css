@@ -554,6 +554,40 @@ img {
     background-color: var(--colorAD);
 }
 
+
+/********************* COUNTER *********************/
+
+.counter {
+    max-width: 20rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inc-dec {
+    width: 4rem;
+    border-radius: none;
+}
+
+.counting {
+    margin: 2px;
+    padding-top: 1rem;
+}
+
+#counting {
+    padding: 4px 6px 0 6px;
+}
+
+.measurement {
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 2rem auto;
+}
+
+.measure-input-output {
+    width: 15%;
+    border: 1px solid black;
+}
+
 /********************* PROFILE PAGE *********************/
 
 #user_profile .user_info {
@@ -726,7 +760,7 @@ img {
 
 /********************* MEDIA QUERIES *********************/
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1000px){ 
 
     .desktop_nav {
         display: flex;

@@ -113,11 +113,27 @@
                     </div>
 
                 </div>
+                
+                
 
                 <div class="recipe-direction">
+                    <div class="measurement">
+                        <p>Weight Conversion</p>
+                        <input class="measure-input-output" type="text" id="input" placeholder="Insert" onfocus="this.value=''">
+                        <button id="gram">Gram</button> <button id="ounce">Ounce</button>
+                        <input class="measure-input-output" type="text" id="output" placeholder="Result" onfocus="this.value=''">
+                    </div>
                     <div class="recipe-description">
                         <h3>Ingredients</h3>
-                        <p>4 Servings</p>
+                        <div>
+                            <div class="counter">
+                                <button class="inc-dec" onclick="increase()">+</button>
+                                <p id="counting"></p>
+                                <button class="inc-dec" onclick="decrease()">-</button><span
+                                    style="margin-left: 8px; padding-top: 4px;"> Servings</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="directions">
