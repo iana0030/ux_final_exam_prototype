@@ -21,6 +21,8 @@
     
     --colorInputField: #ffffff;
     --colorBoxShadow: #693b1627;
+    --colorModalBox: #ffffff;
+    --colorModalBG: #4629115b;
     
     --colorHeadings: #481620;
     --colorBodyTxt: #514344;
@@ -97,14 +99,18 @@ a, li {
 .category-popup {
     border-radius: var(--borderRadius);
     border: var(--borderProperties);
-    background-color: white;
+    background-color: var(--colorModalBox);
     position: absolute;
-    left: 58vw;
+    left: 37vw;
     top: 10vh;
-    width: 15vw;
+    width: auto;
     padding: 1rem 2rem;
 }
 
+.account_utility img {
+    width: 1rem;
+    margin-right: .2rem;
+}
 
 /********************* NAVBAR AND FOOTER *********************/
 
@@ -150,7 +156,7 @@ nav a:hover, footer a:hover {
 }
 
 .menu_items {
-    z-index: 200;
+    z-index: 5;
     position: fixed;
     background-color: var(--colorNav);
     box-shadow: -3px 5px 10px var(--colorBoxShadow);
@@ -314,6 +320,20 @@ button {
     background-color: var(--colorSidebarButtonHover);
 }
 
+.btn_container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.btn_container button {
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.btn_container button:hover, .recipe_btn:hover, .profile_btn:hover {
+    opacity: 0.6;
+}
+
 /********************* HOMEPAGE *********************/
 
 .not_displayed {
@@ -369,52 +389,56 @@ img {
 .login {
     margin:3rem auto;
     max-width:30rem
-  }
-  .login-header {
+}
+
+.login-header {
     color:var(--colorHeadings);
     text-align:center;
     padding-bottom: 1rem;
-  }
-  .login-header h1 {
-     text-shadow: 0px 5px 15px var(--colorSidebarButtonHover); 
-  }
-  
-  .login-form {
+}
+
+.login-header h1 {
+    text-shadow: 0px 5px 15px var(--colorSidebarButtonHover); 
+}
+
+.login-form {
     border-radius:1rem;
-    box-shadow:0rem 0rem 2rem rgb(253, 231, 91);
+    box-shadow: 0rem 0rem 2rem var(--colorBoxShadow);
     box-sizing:border-box;
     padding-top:6rem;
     padding-bottom:2rem;
     text-align:center;
     height: 30rem;
-  }
-  .login input[type="text"],
-  .login input[type="password"] {
+}
+
+.login input[type="text"],
+.login input[type="password"] {
     max-width:25rem;
     width: 80%;
     line-height:3rem;
     margin:1rem 2rem;
-    border-radius:1rem;
-    border:.2rem solid rgb(215, 211, 211);
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
     outline:none;
     padding-left:10px;
-  }
-  .login-form input[type="button"] {
-    margin-top:3rem;
-    height:3rem;
-    width:8rem;
-    background:var(--colorButton);
-    border:1px solid #f2f2f2;
-    border-radius:20px;
+}
+
+.login-form input[type="button"] {
+    margin-top: 3rem;
+    height: 3rem;
+    width: 8rem;
+    background: var(--colorButton);
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
     color: var(--colorBodyTxt);
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-family: var(--fontBodyText);
     cursor:pointer;
-  }
+}
 
-  .login-form input [type="button"]:hover {
-      background: var(--colorButtonHover);
-  }
+.login-form input [type="button"]:hover {
+    background: var(--colorButtonHover);
+}
 
 /********************* SIGNUP *********************/
 
@@ -432,7 +456,7 @@ img {
 }
 .signup-form {
     border-radius:1rem;
-    box-shadow:0rem 0rem 2rem rgb(253, 231, 91);
+    box-shadow:0rem 0rem 2rem var(--colorBoxShadow);
     box-sizing:border-box;
     padding-top:4rem;
     padding-bottom:2rem;
@@ -446,23 +470,25 @@ img {
     width: 80%;
     line-height:3rem;
     margin:1rem 2rem;
-    border-radius:1rem;
-    border:.2rem solid rgb(215, 211, 211);
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
     outline:none;
     padding-left:10px;
 }
+
 .signup-form input[type="button"] {
     margin-top:3rem;
     height:3rem;
-     width:8rem;
+    width:8rem;
     background:var(--colorButton);
-    border:1px solid #f2f2f2;
-    border-radius:20px;
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
     color: var(--colorBodyTxt);
     text-transform:uppercase;
     font-family: var(--fontBodyText);
     cursor:pointer;
 }
+
 .signup-form input [type="button"]:hover {
     background: var(--colorButtonHover);
 }
@@ -470,16 +496,12 @@ img {
 
 
 /********************* RECIPE PAGE *********************/
-.recipe-details {
-    display: flex;
-    margin: 1rem 1rem 3rem 1rem;
-    justify-content: space-between;
-}
 
 .infos {
     display: flex;
     margin: 2.5rem 1rem 1rem 1rem;
     text-align: center;
+    justify-content: center;
 }
 
 .infos div {
@@ -488,9 +510,7 @@ img {
 }
 
 .img-burger {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 10%;
+    border-radius: var(--borderRadius);
     overflow: hidden;
 }
 
@@ -503,7 +523,7 @@ img {
 }
 
 .info-minutes {
-    border: 2px solid black;
+    border: var(--borderProperties);
     border-bottom: none;
     border-top: none;
 }
@@ -513,7 +533,7 @@ img {
     color: var(--colorBodyTxt);
     font-family: var(--fontHeadings);
     font-weight: 400;
-  
+
 }
 
 .number-m {
@@ -536,21 +556,92 @@ img {
 .recipe-description {
     display: flex;
     justify-content: space-between;
-  
-}
 
-.recipe-direction {
-    width: 40rem;
 }
 
 .directions {
-    display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     justify-content: space-between;
 }
 
+.directions ul, .directions ol{
+    padding: 0 2rem 2rem 2rem;
+}
+
+.directions ul li{
+    list-style-type: circle;
+    font-family: var(--colorBodyTxt);
+    font-weight: var(--fontWeightBodyTxt);
+    color: var(--colorBodyTxt);
+}
+
+.directions ol li{
+    padding-bottom: 1rem;
+    font-family: var(--colorBodyTxt);
+    font-weight: var(--fontWeightBodyTxt);
+    color: var(--colorBodyTxt);
+}
+
+.comments_rating div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments_rating .comment, .comments_rating .rating {
+    display: flex;
+
+}
+.comments_rating .comment i, .comments_rating .rating i{
+    margin: 0 .5rem .5rem 0;
+    font-size: 1.2rem;
+}
+
+.comments_rating textarea {
+    width: 100%;
+}
+
+.comments_rating .rating_input {
+    margin-bottom: 1rem;
+}
+
+.written_comment {
+    border: var(--borderProperties);
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.written_comment h3{
+    margin: 0;
+}
+
+.written_comment p{
+    margin-top: .5rem;
+}
+
+.written_comment div p {
+    font-weight: 600;
+    opacity: 0.3;
+}
+
+.comments_rating fieldset {
+    border: none;
+    margin: .5rem 0;
+}
+
+.comments_rating fieldset input{
+    width: auto;
+}
+
+.comments_rating fieldset label{
+    margin-right: 1rem;
+}
+
+.comments_rating fieldset legend{
+    font-size: 0.8rem;
+}
+
 .advertise {
-    border: 2px solid black;
+    border: var(--borderProperties);
     background-color: var(--colorAD);
 }
 
@@ -558,9 +649,14 @@ img {
 /********************* COUNTER *********************/
 
 .counter {
-    max-width: 20rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.counter span {
+    margin-left: 8px;
+    padding-top: 4px;
 }
 
 .inc-dec {
@@ -585,7 +681,7 @@ img {
 
 .measure-input-output {
     width: 15%;
-    border: 1px solid black;
+    border: var(--borderProperties);
 }
 
 /********************* PROFILE PAGE *********************/
@@ -631,10 +727,6 @@ img {
 
 #user_profile .owned_recipes .recipe img, #user_profile .saved_recipes .recipe img {
     object-fit: cover;
-}
-
-#user_profile h3 {
-    font-size: clamp(.8rem, 2vw, 1.3rem);
 }
 
 /********************* CREATE RECIPE PAGE *********************/
@@ -709,6 +801,78 @@ img {
     padding: 0;
 }
 
+/********************* EDIT RECIPE PAGE *********************/
+
+#edit_recipe_page hr {
+    border: var(--borderProperties);
+    margin: 1rem 2rem;
+    opacity: 0.5;
+}
+
+#edit_recipe_page {
+    margin: 1rem;
+}
+
+#edit_recipe_page input {
+    border: var(--borderProperties);
+    padding: .5rem;
+}
+
+#edit_recipe_page legend{
+    font-family: var(--fontHeadings);
+    font-weight: var(--fontWeightHeadings);
+    color: var(--colorHeadings);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    margin-bottom: .7rem;
+}
+
+#edit_recipe_page fieldset{
+    border: none;
+}
+
+#edit_recipe_page .img_preview img{
+    object-fit: cover;
+    display: block;
+    color: var(--colorBodyTxt);
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+
+#edit_recipe_page div {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#edit_recipe_page .recipe_ingredients_input div{
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 .5rem 0;
+    width: 100%;
+}
+
+#edit_recipe_page .recipe_ingredients_input div input{
+    width: 100%;
+}
+
+#edit_recipe_page .btn_container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#edit_recipe_page .btn_container button{
+    align-self: center;
+    font-size: 1.5rem;
+    background-color: transparent;
+    padding: 0;
+}
+
 
 /********************* EDIT PROFILE *********************/
 
@@ -756,6 +920,39 @@ img {
     font-size: 1rem;
 }
 
+/********************* DELETE PROFILE MODAL *********************/
+
+#delete_modal{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+.modal_bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--colorModalBG);
+    opacity: 0.5;
+}
+
+.modal_box{
+    z-index: 12;
+    position: relative;
+    top: 150px;
+    margin: 0 1rem;
+    padding: 2.5rem;
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
+    background-color: var(--colorModalBox);
+}
+
+.modal_box div {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 
 
 /********************* MEDIA QUERIES *********************/
@@ -773,8 +970,8 @@ img {
     .desktop_nav a i {
         margin: 0 0.3rem;
     }
-  
-      .dropdown_content {
+
+    .dropdown_content {
         position: absolute;
         font-family: var(--fontLinks);
         font-weight: var(--fontWeightLinks);
@@ -808,14 +1005,14 @@ img {
         display: none;
     }
 
-    .account_utility a {
+    .account_utility > a {
         margin: 0 0.3rem;
         padding: 0.3rem 1rem;
         border-radius: var(--borderRadius);
         background-color: var(--colorUtilityButton);
     }
-  
-      .account_utility > a:hover {
+
+    .account_utility > a:hover {
         background-color: var(--colorButtonHover);
         transition: 1s;
     }
@@ -850,8 +1047,13 @@ img {
         margin: 2rem;
     }
 
+    .category-popup {
+        left: 58vw;
+        top: 10vh;
+        width: 15vw;
+    }
     /********************* HOMEPAGE *********************/
-  
+
     #about {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -888,7 +1090,7 @@ img {
         grid-area: daily;
     }
 
-    #main_recipes .advertisement {
+    #main_recipes .advertisement, #user_profile .advertisement {
         grid-area: ad;
         width: 200px;
         height: 600px;
@@ -919,7 +1121,7 @@ img {
         margin: 0 .5rem;
         justify-content: space-between;
     }
-  
+
   /********************* PROFILE PAGE *********************/
 
     #user_profile .recipe_btn {
@@ -1029,4 +1231,99 @@ img {
         background-color: transparent;
         padding: 0;
     }
+
+    /********************* EDIT RECIPE PAGE *********************/
+
+    #edit_recipe_page {
+        margin: 1rem auto;
+        width: 80vw;
+    }
+
+    #edit_recipe_page .img_preview {
+        grid-area: image;
+        height: auto;
+    }
+
+    #edit_recipe_page .recipe_info_input {
+        display: grid;
+        gap: 2rem;
+        grid-template-areas: 
+        "image info"
+        "image prep";
+    }
+
+    #edit_recipe_page .recipe_info_input fieldset:nth-child(1){
+        grid-area: info;
+    }
+    #edit_recipe_page .recipe_info_input fieldset:nth-child(2){
+        grid-area: prep;
+    }
+
+    #edit_recipe_page .recipe_content_input {
+        display: flex;
+        gap: 5rem;
+    }
+    #edit_recipe_page .recipe_content_input fieldset{
+        flex: 0 1 400px;
+    }
+
+    #edit_recipe_page .recipe_directions_input div textarea {
+        width: 100%;
+    }
+
+    #edit_recipe_page .recipe_directions_input div {
+        margin: 0 0 1rem 0;
+    }
+
+    #edit_recipe_page .btn_container {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #edit_recipe_page .btn_container button{
+        align-self: center;
+        font-size: 1.5rem;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /********************* DELETE PROFILE MODAL *********************/
+
+
+    .modal_box{
+        width: 40vw;
+        margin: 0 auto;
+        padding: 2.5rem 5rem;
+    }
+
+    /********************* RECIPE PAGE *********************/
+    .recipe-details {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 1rem 1rem 3rem 1rem;
+        justify-content: space-between;
+    }
+
+    .img-burger {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .directions {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+    }
+
+    .comments_rating {
+        width: 40vw;
+        margin: 0 auto;
+    }
+
+    .btn_container {
+        display: flex;
+        flex-direction: column;
+    }
+
 }

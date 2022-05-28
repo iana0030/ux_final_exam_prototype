@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/815e91b325.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <title>Edit recipe | Delicacy Corner</title>
+</head>
+<body>
+
+    <section id="delete_modal" class="not_displayed">
+        <div class="modal_bg"></div>
+        <div class="modal_box">
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile?<br>Everything you've uploaded will disappear as well.</p>
+            <div>
+                <button class="delete_profile_btn"><a href="#">Cancel</a></button>
+                <button><a href="./index.html">Yes, delete</a></button>
+            </div>
+        </div>
+    </section>
+
+
+    <header>
+        <nav>
+            <div class="desktop_nav">
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
+                    <ul class="dropdown_content">
+                        <li><a href="./categories-page.html">All Categories</a></li>
+                        <li><a href="./recipes-page.html">All Recipes</a></li>
+                        <li>Cuisine Recipes</li>
+                        <li>Holiday Recipes</li>
+                        <li>Meal recipes</li>
+                        <li>Special Diet Recipes</li>
+                    </ul>
+                </div>
+                <a href="./recipe.html"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="account_utility">
+                    <a href="#"><img src="../svgs/user.svg" alt="user">Profile</a>
+                    <ul class="dropdown_content">
+                        <li><a href="./profile.html">View profile</a></li>
+                        <li><a href="./edit-profile.html">Edit profile</a></li>
+                        <li class="delete_profile"><a href="#">Delete profile</a></li>
+                    </ul>
+                    <a href="./index.html">Logout</a>
+                </div>
+            </div>
+
+            
+            <div class="mobile_nav">
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <i id="menubutton" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+            <div class="menu_items hidden">
+                <ul>
+                    <li><a href="#">Explore</a>
+                        <ul>
+                            <li><a href="./categories-page.html">All Categories</a></li>
+                            <li><a href="./recipes-page.html">All Recipes</a></li>
+                            <li>Cuisine Recipes</li>
+                            <li>Holiday Recipes</li>
+                            <li>Meal recipes</li>
+                            <li>Special Diet Recipes</li>
+                        </ul>
+                    </li>
+                    <li><a href="./recipe.html">Inspiration</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href="./profile.html">View profile</a></li>
+                            <li><a href="./edit-profile.html">Edit profile</a></li>
+                            <li class="delete_profile_mobile"><a href="#">Delete profile</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./index.html">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<main id="edit_recipe_page">
+    <h1>Edit your own recipe</h1>
+    <hr>
+    <form>
+        <fieldset class="recipe_info_input">
+            <legend>General information</legend>
+            <div class="img_preview"><img src="../images/vegburger.png" alt="Picture of Veg burger"></div>
+            <fieldset>
+                <div>
+                    <label for="recipe_name">Name:</label>
+                    <input name="recipe_name" type="text" id="recipe_name" placeholder="Add name of recipe" value="Veg Burger">
+                </div>
+
+                <div>
+                    <label for="recipe_description">Description:</label>
+                    <input name="recipe_description" type="text" id="recipe_description" placeholder="Add description of recipe">
+                </div>
+
+                <div>
+                    <label for="recipe_nutrition_facts">Nutrition facts:</label>
+                    <input name="recipe_nutrition_facts" type="text" id="recipe_nutrition_facts" placeholder="Add nutrition facts" value="400 Calories">
+                </div>
+
+            </fieldset>
+
+                <fieldset>
+                    <legend>Time to prepare:</legend>
+                    <div>
+                        <label for="recipe_prep_time">Prep time:</label>
+                        <input name="recipe_prep_time" type="time" id="recipe_prep_time" value="00:10">
+                    </div>
+
+                    <div>
+                        <label for="recipe_cook_time">Cook time:</label>
+                        <input name="recipe_cook_time" type="time" id="recipe_cook_time" value="00:25">
+                    </div>
+
+                    <div>
+                        <label for="recipe_servings">Servings:</label>
+                        <input name="recipe_servings" type="number" id="recipe_servings" min="1" placeholder="Add number of servings" value="1">
+                    </div>
+
+                    <div>
+                        <label for="recipe_yield">Yields:</label>
+                        <input name="recipe_yield" type="number" id="recipe_yield" min="0" placeholder="Add yield">
+                    </div>
+                </fieldset>
+        </fieldset>
+
+        <hr>
+
+        <fieldset class="recipe_content_input">
+            <fieldset class="recipe_ingredients_input">
+                <legend>Add your ingredients:</legend>
+                <div class="recipe_ingredients">
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Burger buns">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="5">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Potatoes">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="5">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Cheese slices">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="5">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Capsicum">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="1">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Carrot">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="1">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Sweet corn kernels (optional)">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="3">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon" selected>Tablespoon</option>
+                            <option value="no_unit">No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Cabbage">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="100">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram" selected>Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit">No unit</option>
+                        </select>
+                    </div>
+
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Butter">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="1">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon" selected>Tablespoon</option>
+                            <option value="no_unit">No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Oil">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="2">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon" selected>Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit">No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Salt (as per taste)">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Black pepper (Powder)">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Tomato sauce">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Onion">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="1">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <div>
+                    <label for="ingredient_1">Ingredient:</label>
+                    <input name="ingredient_1" type="text" id="ingredient_1" placeholder="Add your ingredient" value="Cucumber">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_quantity">Quantity:</label>
+                        <input name="ingredient_1_quantity" type="number" id="ingredient_1_quantity" min="1" placeholder="Add amount needed" value="1">
+                    </div>
+
+                    <div>
+                        <label for="ingredient_1_unit">Unit:</label>
+                        <select name="ingredient_1_unit" id="ingredient_1_unit">
+                            <option value="cups">Cups</option>
+                            <option value="kilogram">Kilogram</option>
+                            <option value="gram">Gram</option>
+                            <option value="ounce">Ounce</option>
+                            <option value="teaspoon">Teaspoon</option>
+                            <option value="tablespoon">Tablespoon</option>
+                            <option value="no_unit" selected>No unit</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="btn_container">
+                    <button><i class="fa-solid fa-square-plus"></i></button>
+                </div>
+            </fieldset>
+
+            <fieldset class="recipe_directions_input">
+                <legend>Directions:</legend>
+                <div>
+                    <label for="step_1">Step 1:</label>
+                    <textarea name="step_1" id="step_1">Heat oil in a pan over medium flame.</textarea>
+                </div>
+
+                <div>
+                    <label for="step_2">Step 2:</label>
+                    <textarea name="step_2" id="step_2">Add the onions, carrot, capsicum and saute for a minute or two.</textarea>
+                </div>
+                <div>
+                    <label for="step_3">Step 3:</label>
+                    <textarea name="step_3" id="step_3">Remove and add this to the mashed potatoes.</textarea>
+                </div>
+                <div>
+                    <label for="step_4">Step 4:</label>
+                    <textarea name="step_4" id="step_4">Sprinkle a little salt and pepper powder.</textarea>
+                </div>
+                <div>
+                    <label for="step_5">Step 5:</label>
+                    <textarea name="step_5" id="step_5">Mix well and shape the mixture into 4 to 5 round patties..</textarea>
+                </div>
+                <div>
+                    <label for="step_6">Step 6:</label>
+                    <textarea name="step_6" id="step_6">Heat little butter in a nonstick pan.</textarea>
+                </div>
+                <div>
+                    <label for="step_7">Step 7:</label>
+                    <textarea name="step_7" id="step_7">Add the prepared patties and fry for 30 seconds on both sides or until lightly browned</textarea>
+                </div>
+                <div>
+                    <label for="step_8">Step 8:</label>
+                    <textarea name="step_8" id="step_8">Add a cheese slice on top, cover with a lid and cook for another 30 seconds or until itstarts to melt.</textarea>
+                </div>
+                <div>
+                    <label for="step_9">Step 9:</label>
+                    <textarea name="step_9" id="step_9">Lightly warm the burger buns and spread butter on one half of the burger buns.</textarea>
+                </div>
+                <div>
+                    <label for="step_10">Step 10:</label>
+                    <textarea name="step_10" id="step_10">Add some cabbage, 1 tomato, cucumber and onion slice on top.</textarea>
+                </div>
+                <div>
+                    <label for="step_11">Step 11:</label>
+                    <textarea name="step_11" id="step_11">Place the cooked burger patty with the cheese on top.</textarea>
+                </div>
+                <div>
+                    <label for="step_12">Step 12:</label>
+                    <textarea name="step_12" id="step_12">Sprinkle a bit of pepper powder and top up with some sauce if desired.</textarea>
+                </div>
+                <div>
+                    <label for="step_13">Step 13:</label>
+                    <textarea name="step_13" id="step_13">Cover with the other half of the bun.</textarea>
+                </div>
+                <div>
+                    <label for="step_14">Step 14:</label>
+                    <textarea name="step_14" id="step_14">Serve with french fries.</textarea>
+                </div>
+
+                <div class="btn_container">
+                    <button><i class="fa-solid fa-square-plus"></i></button>
+                </div>
+            </fieldset>
+        </fieldset>
+        <hr>
+
+    </form>
+    <a href="./recipe.html">
+        <button><i class="fa-solid fa-square-plus"></i> Save recipe</button>
+    </a>
+</main>
+
+
+<footer>
+    <section class="SoMe">
+        <i class="fa-brands fa-facebook-square fa-xl"></i>
+        <i class="fa-brands fa-twitter-square fa-xl"></i>
+        <i class="fa-brands fa-instagram-square fa-xl"></i>
+        <i class="fa-solid fa-square-envelope fa-xl"></i>
+    </section>
+    <section class="info_links">
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Terms of service</a>
+        <a href="#">FAQ</a>
+    </section>
+    <section class="copyright">
+        <p>&copy; 2022 KEA Web Development - Group H</p>
+    </section>
+</footer>
+
+</body>
+</html>

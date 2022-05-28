@@ -10,21 +10,35 @@
     <title>Edit Profile | Delicacy Corner</title>
 </head>
 <body>
+
+    <section id="delete_modal" class="not_displayed">
+        <div class="modal_bg"></div>
+        <div class="modal_box">
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile?<br>Everything you've uploaded will disappear as well.</p>
+            <div>
+                <button class="delete_profile_btn"><a href="#">Cancel</a></button>
+                <button><a href="./index.html">Yes, delete</a></button>
+            </div>
+        </div>
+    </section>
+
     <header>
         <nav>
             <div class="desktop_nav">
-                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
                 <div>
                     <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
                     <ul class="dropdown_content">
-                        <li>All recipes</li>
+                        <li><a href="./categories-page.html">All Categories</a></li>
+                        <li><a href="./recipes-page.html">All Recipes</a></li>
                         <li>Cuisine Recipes</li>
                         <li>Holiday Recipes</li>
                         <li>Meal recipes</li>
                         <li>Special Diet Recipes</li>
                     </ul>
                 </div>
-                <a href="#"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <a href="./recipe.html"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
                 <div class="searchBar">
                     <input type="text" placeholder="Search for a recipe">
                     <button class="search_btn">
@@ -32,18 +46,19 @@
                     </button>
                 </div>
                 <div class="account_utility">
-                    <a href="#">Profile</a>
+                    <a href="#"><img src="../svgs/user.svg" alt="user">Profile</a>
                     <ul class="dropdown_content">
                         <li><a href="./profile.html">View profile</a></li>
-                        <li><a href="./edit_profile.html">Edit profile</a></li>
-                        <li>Delete profile</li>
+                        <li><a href="./edit-profile.html">Edit profile</a></li>
+                        <li class="delete_profile"><a href="#">Delete profile</a></li>
                     </ul>
+                    <a href="./index.html">Logout</a>
                 </div>
             </div>
 
             
             <div class="mobile_nav">
-                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
                 <div class="searchBar">
                     <input type="text" placeholder="Search for a recipe">
                     <button class="search_btn">
@@ -56,21 +71,23 @@
                 <ul>
                     <li><a href="#">Explore</a>
                         <ul>
-                            <li>All Recipes</li>
+                            <li><a href="./categories-page.html">All Categories</a></li>
+                            <li><a href="./recipes-page.html">All Recipes</a></li>
                             <li>Cuisine Recipes</li>
                             <li>Holiday Recipes</li>
                             <li>Meal recipes</li>
                             <li>Special Diet Recipes</li>
                         </ul>
                     </li>
-                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="./recipe.html">Inspiration</a></li>
                     <li><a href="#">Profile</a>
                         <ul>
                             <li><a href="./profile.html">View profile</a></li>
-                            <li><a href="./edit_profile.html">Edit profile</a></li>
-                            <li>Delete profile</li>
+                            <li><a href="./edit-profile.html">Edit profile</a></li>
+                            <li class="delete_profile_mobile"><a href="#">Delete profile</a></li>
                         </ul>
                     </li>
+                    <li><a href="./index.html">Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -92,7 +109,7 @@
             <label for="bio">Bio:</label>
             <textarea name="bio" id="bio" cols="30" rows="10">I like cooking and making desserts for me and my partner. I will be uploading health-safe recipes here.</textarea>
         </div>
-        <button type="submit">Save changes</button>
+        <a href="./profile.html"><button type="submit">Save changes</button></a>
     </section>
 
 </main>

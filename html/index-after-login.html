@@ -10,21 +10,48 @@
     <title>Welcome to Delicacy Corner! A place for yummy recipes all around</title>
 </head>
 <body>
+
+
+    <section id="delete_modal" class="not_displayed">
+        <div class="modal_bg"></div>
+        <div class="modal_box">
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile?<br>Everything you've uploaded will disappear as well.</p>
+            <div>
+                <button class="delete_profile_btn"><a href="#">Cancel</a></button>
+                <button><a href="./index.html">Yes, delete</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup window -->
+    <div class="category-popup hidden">
+        <h3>Categories</h3>
+
+        <div class="category_list">
+            <a href="./category-recipes-page.html">
+                <p>Asian</p>
+            </a>
+            <p>Breakfasts</p>
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="desktop_nav">
-                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
                 <div>
                     <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
                     <ul class="dropdown_content">
-                        <li>All recipes</li>
+                        <li><a href="./categories-page.html">All Categories</a></li>
+                        <li><a href="./recipes-page.html">All Recipes</a></li>
                         <li>Cuisine Recipes</li>
                         <li>Holiday Recipes</li>
                         <li>Meal recipes</li>
                         <li>Special Diet Recipes</li>
                     </ul>
                 </div>
-                <a href="#"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <a href="./recipe.html"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
                 <div class="searchBar">
                     <input type="text" placeholder="Search for a recipe">
                     <button class="search_btn">
@@ -32,18 +59,19 @@
                     </button>
                 </div>
                 <div class="account_utility">
-                    <a href="#">Profile</a>
+                    <a href="#"><img src="../svgs/user.svg" alt="user">Profile</a>
                     <ul class="dropdown_content">
                         <li><a href="./profile.html">View profile</a></li>
-                        <li>Edit profile</li>
-                        <li>Delete profile</li>
+                        <li><a href="./edit-profile.html">Edit profile</a></li>
+                        <li class="delete_profile"><a href="#">Delete profile</a></li>
                     </ul>
+                    <a href="./index.html">Logout</a>
                 </div>
             </div>
 
             
             <div class="mobile_nav">
-                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="logo"><a href="./index-after-login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
                 <div class="searchBar">
                     <input type="text" placeholder="Search for a recipe">
                     <button class="search_btn">
@@ -56,28 +84,30 @@
                 <ul>
                     <li><a href="#">Explore</a>
                         <ul>
-                            <li>All Recipes</li>
+                            <li><a href="./categories-page.html">All Categories</a></li>
+                            <li><a href="./recipes-page.html">All Recipes</a></li>
                             <li>Cuisine Recipes</li>
                             <li>Holiday Recipes</li>
                             <li>Meal recipes</li>
                             <li>Special Diet Recipes</li>
                         </ul>
                     </li>
-                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="./recipe.html">Inspiration</a></li>
                     <li><a href="#">Profile</a>
                         <ul>
                             <li><a href="./profile.html">View profile</a></li>
-                            <li>Edit profile</li>
-                            <li>Delete profile</li>
+                            <li><a href="./edit-profile.html">Edit profile</a></li>
+                            <li class="delete_profile_mobile"><a href="#">Delete profile</a></li>
                         </ul>
                     </li>
+                    <li><a href="./index.html">Logout</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-<main>
 
+<main>
     <section id="about">
         <div class="slogan">
             <img src="../svgs/Yummy_face_text.svg" alt="Drawing of a mouth and a tongue on top of text saying 'Recipes? Yes please!'">
@@ -102,38 +132,34 @@
                 <article class="recipe">
                     <img src="../images/Blueberry_muffins.jpg" alt="Blueberry muffins">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Blueberry Muffins</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <i class="fas fa-mitten"></i>
+                            <p>Medium</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
-                            <p>20 min</p>
+                            <p>115 min</p>
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>3.1</p>
                         </div>
                     </div>
-                    <!-- <div class="next_btn">
-                        <button>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </button>
-                    </div> -->
                 </article>
     
                 <article class="recipe">
                     <img src="../images/MacNCheese.jpg" alt="Mac and Cheese">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Mac'n Cheese</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <p>Easy</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
@@ -141,7 +167,7 @@
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>4.7</p>
                         </div>
                     </div>
                 </article>
@@ -149,12 +175,13 @@
                 <article class="recipe">
                     <img src="../images/Spaghetti.jpg" alt="Spaghetti">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Spaghetti</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <i class="fas fa-mitten"></i>
+                            <p>Medium</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
@@ -162,7 +189,7 @@
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>2.4</p>
                         </div>
                     </div>
                 </article>
@@ -175,20 +202,20 @@
                 <article class="daily_recipe">
                     <img src="../images/ben-kolde-FFqNATH27EM-unsplash.jpg" alt="Picture of toast with egg by Ben Kolde">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Sunny Egg</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <p>Easy</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
-                            <p>20 min</p>
+                            <p>15 min</p>
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>4.7</p>
                         </div>
                     </div>
                 </article>
@@ -196,20 +223,22 @@
                 <article class="daily_recipe">
                     <img src="../images/anh-nguyen-kcA-c3f_3FE-unsplash.jpg" alt="Picture by Anh Nguyen">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Asian Bowl</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <i class="fas fa-mitten"></i>
+                            <i class="fas fa-mitten"></i>
+                            <p>Hard</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
-                            <p>20 min</p>
+                            <p>120 min</p>
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>4.8</p>
                         </div>
                     </div>
                 </article>
@@ -217,20 +246,22 @@
                 <article class="daily_recipe">
                     <img src="../images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg" alt="Picture of cake by Anna Tukhfatullina">
                     <div class="name">
-                        <h3>Name</h3>
+                        <h3>Raspberry cake with cream cheese</h3>
                     </div>
                     <div class="recipe_info">
                         <div class="difficulty">
                             <i class="fas fa-mitten"></i>
-                            <p>Level</p>
+                            <i class="fas fa-mitten"></i>
+                            <i class="fas fa-mitten"></i>
+                            <p>Hard</p>
                         </div>
                         <div class="time">
                             <i class="fa-solid fa-clock"></i>
-                            <p>20 min</p>
+                            <p>110 min</p>
                         </div>
                         <div class="rating">
                             <i class="fa-solid fa-star"></i>
-                            <p>Count</p>
+                            <p>4.3</p>
                         </div>
                     </div>
                 </article>
