@@ -1,6 +1,9 @@
 document.querySelector("#menubutton").addEventListener("click", openMenu);
 
-function openMenu() {
+document.querySelector(".searchBar").addEventListener("click", openCategoryPopup)
+document.querySelector(".searchBar").addEventListener("focusout", openCategoryPopup)
+
+function openMenu(){
     document.querySelector("#menubutton").classList.toggle("fa-bars");
     document.querySelector("#menubutton").classList.toggle("fa-x");
     document.querySelector("#menubutton").classList.toggle("menubutton_color");
@@ -37,3 +40,8 @@ ounceBtn.addEventListener('click', function () {
     document.getElementById('output').value = input * 28.34952;
 
 });
+
+function openCategoryPopup() {
+    document.querySelector(".category-popup").classList.toggle("hidden")
+}
+

@@ -30,7 +30,7 @@
     --colorInputFieldTxt: #cad4ca;
     
     --borderRadius: 20px;
-    --borderProperties: 1px solid grey;
+    --borderProperties: 1px solid #42182027;
 
     --fontHeadings: 'Lato', sans-serif;
     --fontWeightHeadings: 900;
@@ -39,7 +39,6 @@
     --fontLinks: 'Lato', sans-serif;
     --fontWeightLinks: 300;
 }
-
 
 *{
     box-sizing: border-box;
@@ -53,7 +52,6 @@ html, body {
     line-height: 1.5;
     background-color: var(--colorBG);
     overflow-x: hidden;
-
 }
 
 main {
@@ -68,6 +66,21 @@ main > section {
     margin: 0 2rem 2rem 2rem;
 }
 
+a, li {
+    text-decoration: none;
+    font-family: var(--fontLinks);
+    font-weight: var(--fontWeightLinks);
+    color: var(--colorNavTxt);
+}
+
+.recipe_btn, .profile_btn {
+    background-color: transparent;
+    font-size: 1.4rem;
+    font-family: var(--fontBodyText);
+    padding: 0;
+    margin: 0 2rem;
+}
+
 /********************* AD *********************/
 
 .advertisement{
@@ -80,12 +93,22 @@ main > section {
     font-size: 4rem;
 }
 
-
+/********************* NAVBAR AND FOOTER *********************/
+.category-popup {
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
+    background-color: white;
+    position: absolute;
+    left: 58vw;
+    top: 10vh;
+    width: 15vw;
+    padding: 1rem 2rem;
+}
 
 
 /********************* NAVBAR AND FOOTER *********************/
 
-nav div > a, footer a {
+nav div > a, footer a, .category-popup a {
     text-decoration: none;
     font-family: var(--fontLinks);
     font-weight: var(--fontWeightLinks);
@@ -170,7 +193,6 @@ nav a:hover, footer a:hover {
 }
 
 footer {
-    
     background-color: var(--colorFooter);
     color: var(--colorFooterTxt);
     padding: 1rem;
@@ -212,7 +234,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.1rem, 3vw, 2.5rem);
 }
 
 h2 {
@@ -235,14 +257,37 @@ p {
 
 input {
     padding: .3rem 1rem;
+    font-family: var(--fontBodyTxt);
+    color: var(--colorBodyTxt);
     border-radius: var(--borderRadius);
     border: none;
     background-color: var(--colorInputField);
     width: 40vw;
 }
 
+
 ::placeholder {
     color: var(--colorInputFieldTxt);
+}
+
+textarea {
+    padding: .5rem;
+    font-family: var(--fontBodyTxt);
+    color: var(--colorBodyTxt);
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
+    background-color: var(--colorInputField);
+    width: 70vw;
+    height: 70px;
+}
+
+select {
+    padding: .5rem;
+    border-radius: var(--borderRadius);
+    border: var(--borderProperties);
+    width: 100%;
+    font-family: var(--fontBodyText);
+    color: var(--colorBodyTxt);
 }
 
 button {
@@ -294,14 +339,12 @@ img {
 }
 
 .recipe, .daily_recipe {
-    /* margin: 0 auto 1.5rem auto; */
     margin-right: 1rem;
     min-width: 70vw;
 }
 
 .recipe img, .daily_recipe img{
     border-radius: var(--borderRadius);
-    /* object-fit: cover; */
 }
 
 .recipe_info {
@@ -322,9 +365,6 @@ img {
     width: 10vw;
 }
 
-/* .next_btn {
-    text-align: center;
-} */
 /********************* LOGIN *********************/
 .login {
     margin:3rem auto;
@@ -514,6 +554,7 @@ img {
     background-color: var(--colorAD);
 }
 
+
 /********************* COUNTER *********************/
 
 .counter {
@@ -547,6 +588,176 @@ img {
     border: 1px solid black;
 }
 
+/********************* PROFILE PAGE *********************/
+
+#user_profile .user_info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#user_profile .user_info .user_pfp {
+    border-radius: 50%;
+    min-width: 100px;
+    min-height: 100px;
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#user_profile .user_info h1 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin: 0;
+}
+
+#user_profile .user_info .user_name {
+    opacity: 0.6;
+}
+
+#user_profile .user_info p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+#user_profile .owned_recipes, #user_profile .saved_recipes {
+    border: var(--borderProperties);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#user_profile .owned_recipes .recipe, #user_profile .saved_recipes .recipe {
+    margin: 1.5rem 0;
+}
+
+#user_profile .owned_recipes .recipe img, #user_profile .saved_recipes .recipe img {
+    object-fit: cover;
+}
+
+#user_profile h3 {
+    font-size: clamp(.8rem, 2vw, 1.3rem);
+}
+
+/********************* CREATE RECIPE PAGE *********************/
+
+#create_recipe_page hr {
+    border: var(--borderProperties);
+    margin: 1rem 2rem;
+    opacity: 0.5;
+}
+
+#create_recipe_page {
+    margin: 1rem;
+}
+
+#create_recipe_page input {
+    border: var(--borderProperties);
+    padding: .5rem;
+}
+
+#create_recipe_page legend{
+    font-family: var(--fontHeadings);
+    font-weight: var(--fontWeightHeadings);
+    color: var(--colorHeadings);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    margin-bottom: .7rem;
+}
+
+#create_recipe_page fieldset{
+    border: none;
+}
+
+#create_recipe_page .img_preview {
+    display: block;
+    color: var(--colorBodyTxt);
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+    padding-top: calc(300px / 2 - 1rem);
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+
+#create_recipe_page div {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create_recipe_page .recipe_ingredients_input div{
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 .5rem 0;
+    width: 100%;
+}
+
+#create_recipe_page .recipe_ingredients_input div input{
+    width: 100%;
+}
+
+#create_recipe_page .btn_container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#create_recipe_page .btn_container button{
+    align-self: center;
+    font-size: 1.5rem;
+    background-color: transparent;
+    padding: 0;
+}
+
+
+/********************* EDIT PROFILE *********************/
+
+#edit_user_profile .user_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#edit_user_profile .user_info div{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+#edit_user_profile .user_info div:nth-child(2){
+    align-items: flex-start;
+}
+
+#edit_user_profile .user_info .user_pfp {
+    border-radius: 50%;
+    min-width: 100px;
+    min-height: 100px;
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#edit_user_profile .user_info label{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+#edit_user_profile .user_info input{
+    border: var(--borderProperties);
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+#edit_user_profile .user_info textarea{
+    border: var(--borderProperties);
+    width: 100%;
+    height: 200px;
+    font-size: 1rem;
+}
+
+
+
 /********************* MEDIA QUERIES *********************/
 
 @media only screen and (min-width: 1000px){ 
@@ -561,6 +772,28 @@ img {
 
     .desktop_nav a i {
         margin: 0 0.3rem;
+    }
+  
+      .dropdown_content {
+        position: absolute;
+        font-family: var(--fontLinks);
+        font-weight: var(--fontWeightLinks);
+        background-color: var(--colorNav);
+        color: var(--colorNavTxt);
+        padding: 1.7rem;
+        list-style-type: none;
+        line-height: 1.8rem;
+        transition: .8s;
+        border-radius: var(--borderRadius);
+        box-shadow: var(--colorBoxShadow);
+    }
+
+    .desktop_nav div:nth-child(2):hover .dropdown_content{
+        display: block;
+    }
+
+    .desktop_nav .account_utility:hover .dropdown_content{
+        display: block;
     }
 
     .logo {
@@ -580,6 +813,11 @@ img {
         padding: 0.3rem 1rem;
         border-radius: var(--borderRadius);
         background-color: var(--colorUtilityButton);
+    }
+  
+      .account_utility > a:hover {
+        background-color: var(--colorButtonHover);
+        transition: 1s;
     }
 
     .searchBar {
@@ -612,12 +850,13 @@ img {
         margin: 2rem;
     }
 
+    /********************* HOMEPAGE *********************/
+  
     #about {
         display: grid;
         grid-template-columns: 1fr 1fr;
         place-items: center;
-        margin-bottom: 5rem
-        /* grid-area: about; */
+        margin-bottom: 5rem;
     }
 
     #about .info {
@@ -680,12 +919,114 @@ img {
         margin: 0 .5rem;
         justify-content: space-between;
     }
-}
-
   
+  /********************* PROFILE PAGE *********************/
 
+    #user_profile .recipe_btn {
+        margin: 0 1rem;
+    }
 
+    #user_profile .user_info {
+        gap: 3rem;
+    }
 
-@media only screen and (min-width: 1250px){
+    #user_profile .user_info .bio {
+        width: 30vw;
+    }
+    
+    #user_profile .owned_recipes, #user_profile .saved_recipes {
+        padding: 1rem;
+        margin: 1.5rem 1rem 0 1rem;
+    }
 
+    #user_profile .owned_recipes h2, #user_profile .saved_recipes h2 {
+        margin-right: 0.8rem;
+        margin-left: 0.8rem;
+        padding: 0 .5rem;
+    }
+    
+    #user_profile .recipes {
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+        "uploaded saved ad"
+        "uploaded saved ad";
+    }
+
+    #user_profile .owned_recipes {
+        grid-area: uploaded;
+    }
+
+    #user_profile .saved_recipes {
+        grid-area: saved;
+    }
+
+    #user_profile .owned_recipes > div, #user_profile .saved_recipes > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #user_profile .owned_recipes .recipe, #user_profile .saved_recipes .recipe {
+        margin: 1rem .8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 .5rem;
+    }
+
+    /********************* CREATE RECIPE PAGE *********************/
+
+    #create_recipe_page {
+        margin: 1rem auto;
+        width: 80vw;
+    }
+
+    #create_recipe_page .img_preview {
+        grid-area: image;
+        height: auto;
+    }
+
+    #create_recipe_page .recipe_info_input {
+        display: grid;
+        gap: 2rem;
+        grid-template-areas: 
+        "image info"
+        "image prep";
+    }
+
+    #create_recipe_page .recipe_info_input fieldset:nth-child(1){
+        grid-area: info;
+    }
+    #create_recipe_page .recipe_info_input fieldset:nth-child(2){
+        grid-area: prep;
+    }
+
+    #create_recipe_page .recipe_content_input {
+        display: flex;
+        gap: 5rem;
+    }
+    #create_recipe_page .recipe_content_input fieldset{
+        flex: 0 1 400px;
+    }
+
+    #create_recipe_page .recipe_directions_input div textarea {
+        width: 100%;
+    }
+
+    #create_recipe_page .recipe_directions_input div {
+        margin: 0 0 1rem 0;
+    }
+
+    #create_recipe_page .btn_container {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #create_recipe_page .btn_container button{
+        align-self: center;
+        font-size: 1.5rem;
+        background-color: transparent;
+        padding: 0;
+    }
 }

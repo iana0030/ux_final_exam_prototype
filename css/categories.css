@@ -1,0 +1,76 @@
+:root {
+    --borderProperties: 1px solid grey;
+    --borderRadius: 20px;
+    --colorBoxShadow: #693b1627;
+}
+
+main {
+    min-height: 80vh;
+}
+
+/********************* ADVERTISEMENTS *********************/
+.all_categories_ad_section {
+    display: flex;
+}
+
+/********************* ALL RECIPE CARD AND LAYOUT *********************/
+.all_categories_categorie {
+    margin-top: 5vh;
+    width: 80%;
+    max-width: 350px;
+    border: var(--borderProperties);
+    margin-left: 10%;
+    padding: 1rem 1rem 0 1rem;
+    border-radius: var(--borderRadius);
+    display: flex;
+}
+
+.all_categories_categorie_section a {
+    text-decoration: none;
+}
+
+.all_categories_categorie img {
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    box-shadow: 3px 6px 5px var(--colorBoxShadow);
+    max-width: 200px;
+}
+
+.all_categories_categorie_left_section {
+    width: 35vw;
+}
+
+
+.all_categories_categorie_right_section {
+    display: flex;
+    width: 35vw;
+    margin-left: 5vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/********************* MEDIA QUERIES *********************/
+@media only screen and (min-width: 1000px){
+    .all_categories_categorie img {
+        min-width: 160px;
+        width: 160px;
+    }
+
+    .all_categories_categorie_right_section {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .all_categories_categorie_section {
+        width: 1400px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .all_categories_categorie {
+        width: 350px;
+    }
+}

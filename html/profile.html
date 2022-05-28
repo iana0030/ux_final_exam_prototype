@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/815e91b325.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <title>Profile | Delicacy Corner</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="desktop_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_2.svg" alt="Delicacy corner logo"></a></div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-list-ul"></i>Explore</a>
+                    <ul class="dropdown_content">
+                        <li>All recipes</li>
+                        <li>Cuisine Recipes</li>
+                        <li>Holiday Recipes</li>
+                        <li>Meal recipes</li>
+                        <li>Special Diet Recipes</li>
+                    </ul>
+                </div>
+                <a href="#"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="account_utility">
+                    <a href="#">Profile</a>
+                    <ul class="dropdown_content">
+                        <li><a href="./profile.html">View profile</a></li>
+                        <li><a href="./edit_profile.html">Edit profile</a></li>
+                        <li>Delete profile</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="mobile_nav">
+                <div class="logo"><a href="./index_after_login.html"><img src="../svgs/Logo_1.svg" alt="Delicacy corner logo"></a></div>
+                <div class="searchBar">
+                    <input type="text" placeholder="Search for a recipe">
+                    <button class="search_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <i id="menubutton" class="fa-solid fa-bars fa-lg"></i>
+            </div>
+            <div class="menu_items hidden">
+                <ul>
+                    <li><a href="#">Explore</a>
+                        <ul>
+                            <li>All Recipes</li>
+                            <li>Cuisine Recipes</li>
+                            <li>Holiday Recipes</li>
+                            <li>Meal recipes</li>
+                            <li>Special Diet Recipes</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href="./profile.html">View profile</a></li>
+                            <li><a href="./edit_profile.html">Edit profile</a></li>
+                            <li>Delete profile</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<main id="user_profile">
+
+    <section class="user_info">
+        <div>
+            <img class="user_pfp" src="../images/johan.png" alt="Profile picture">
+        </div>
+        <div>
+            <h1 class="full_name">Johan Bruun</h1>
+            <p class="user_name">@johanbruun</p>
+            <p class="bio">I like cooking and making desserts for me and my partner. I will be uploading health-safe recipes here.</p>
+        </div>
+    </section>
+
+    <a href="./create_recipe.html"><button class="recipe_btn create"><i class="fa-solid fa-square-plus"></i> Create recipe</button></a>
+    <a href="#"><button class="profile_btn edit"><i class="fa-solid fa-pen-to-square"></i> Edit profile</button></a>
+    <section class="recipes">
+        <section class="owned_recipes">
+            <h2>Your uploads</h2>
+            <div>
+            <article class="recipe">
+                <img src="../images/didi-miam-ftrv8LiVZso-unsplash.jpg" alt="Picture of pie by Didi Miam">
+                <div class="name">
+                    <h3>Delicious Pie</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <p>Medium</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>1h 10min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.5</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="recipe">
+                <img src="../images/monika-grabkowska-pCxJvSeSB5A-unsplash.jpg" alt="Picture of salad by Monika Grabkowska">
+                <div class="name">
+                    <h3>Healthy crouton salad</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <p>Easy</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>20 min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>3.6</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="recipe">
+                <img src="../images/will-echols-P_l1bJQpQF0-unsplash.jpg" alt="Picture of chocolate cake by Will Echols">
+                <div class="name">
+                    <h3>Lactose-free Chocolate Cake</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <p>Hard</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>1h 45min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>4.8</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </section>
+
+        <section class="saved_recipes">
+            <h2>Your saved recipes</h2>
+            <div>
+            <article class="recipe">
+                <img src="../images/ben-kolde-FFqNATH27EM-unsplash.jpg" alt="Picture of toast with egg by Ben Kolde">
+                <div class="name">
+                    <h3>Tasty egg on toast</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <p>Easy</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>15 min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>3.9</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="recipe">
+                <img src="../images/anh-nguyen-kcA-c3f_3FE-unsplash.jpg" alt="Picture by Anh Nguyen">
+                <div class="name">
+                    <h3>Assorted salad with fish and eggs</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <p>Hard</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>40 min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>3.0</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="recipe">
+                <img src="../images/anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg" alt="Picture of cake by Anna Tukhfatullina">
+                <div class="name">
+                    <h3>Raspberry cake with cream cheese</h3>
+                </div>
+                <div class="recipe_info">
+                    <div class="difficulty">
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <i class="fas fa-mitten"></i>
+                        <p>Hard</p>
+                    </div>
+                    <div class="time">
+                        <i class="fa-solid fa-clock"></i>
+                        <p>1h 50min</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <p>2.9</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </section>
+        <aside class="advertisement">
+            <p>AD</p>
+        </aside>
+    </section>
+</main>
+
+
+<footer>
+    <section class="SoMe">
+        <i class="fa-brands fa-facebook-square fa-xl"></i>
+        <i class="fa-brands fa-twitter-square fa-xl"></i>
+        <i class="fa-brands fa-instagram-square fa-xl"></i>
+        <i class="fa-solid fa-square-envelope fa-xl"></i>
+    </section>
+    <section class="info_links">
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Terms of service</a>
+        <a href="#">FAQ</a>
+    </section>
+    <section class="copyright">
+        <p>&copy; 2022 KEA Web Development - Group H</p>
+    </section>
+</footer>
+
+</body>
+</html>
