@@ -1,26 +1,7 @@
 // Homepage
 document.querySelector("#menubutton").addEventListener("click", openMenu);
 
-document.querySelector(".searchBar").addEventListener("click", toggleCategoryPopup);
-document.querySelector(".mobile_nav .searchBar").addEventListener("click", toggleCategoryPopup);
-document.querySelector(".searchBar").addEventListener("focusout", toggleCategoryPopup);
-document.querySelector(".mobile_nav .searchBar").addEventListener("focusout", toggleCategoryPopup);
-
-// Advanced search
-document.querySelector("#advanced_search").addEventListener("click", openAdvancedSearch);
-document.querySelector("#cuisine_input_1").addEventListener("input", displaySecondCuisine);
-document.querySelector("#included_ingredients_input_1").addEventListener("input", displaySecondIncludedIngredient);
-document.querySelector(".advanced_search_button_cancel").addEventListener("click", closeAdvancedSearch);
-
-document.querySelector(".save").addEventListener("click", toggleSaveFill);
-
-document.querySelector("#report-button").addEventListener("click", openReportPopup);
-document.querySelector(".report_button_report").addEventListener("click", closeReportPopup);
-document.querySelector(".report_button_cancel").addEventListener("click", closeReportPopup);
-const reportReasons = document.querySelectorAll(".report_reason");
-document.querySelector("#increase").addEventListener("click", increase);
-document.querySelector("#decrease").addEventListener("click", decrease);
-
+// Burger menu on mobile
 function openMenu(){
     document.querySelector("#menubutton").classList.toggle("fa-bars");
     document.querySelector("#menubutton").classList.toggle("fa-x");
@@ -29,14 +10,80 @@ function openMenu(){
     document.querySelector(".menu_items").classList.toggle("hidden");
 }
 
-function toggleDeleteProfileModal(){
-    document.querySelector("#delete_modal").classList.toggle("not_displayed");
+if(document.querySelector(".delete_profile")) {
+    // Delete profile event listener
+    document.querySelector(".delete_profile").addEventListener("click", toggleDeleteProfileModal);
+    document.querySelector(".delete_profile_mobile").addEventListener("click", toggleDeleteProfileModal);
+    document.querySelector(".modal_bg").addEventListener("click", toggleDeleteProfileModal);
+    document.querySelector(".delete_profile_btn").addEventListener("click", toggleDeleteProfileModal);
+    
+    
+    // Delete profile pop up
+    function toggleDeleteProfileModal(){
+        document.querySelector("#delete_modal").classList.toggle("not_displayed");
+    }
+
+}
+if(document.querySelector(".save")) {
+    // Save button
+    document.querySelector(".save").addEventListener("click", toggleSaveFill);
+
+    // Save button fill
+    function toggleSaveFill() {
+        document.querySelector(".save i").classList.toggle("fa-regular");
+        document.querySelector(".save i").classList.toggle("fa-solid");
+    }
 }
 
-function toggleSaveFill() {
-    document.querySelector(".save i").classList.toggle("fa-regular");
-    document.querySelector(".save i").classList.toggle("fa-solid");
+
+if(document.querySelector(".category-popup")) {
+    // Category popup
+    document.querySelector(".searchBar").addEventListener("click", toggleCategoryPopup);
+    document.querySelector(".mobile_nav .searchBar").addEventListener("click", toggleCategoryPopup);
+    document.querySelector(".searchBar").addEventListener("focusout", toggleCategoryPopup);
+    document.querySelector(".mobile_nav .searchBar").addEventListener("focusout", toggleCategoryPopup);
 }
+
+
+if(document.querySelector("#advanced_search")) {
+    // Advanced search
+    document.querySelector("#advanced_search").addEventListener("click", openAdvancedSearch);
+    document.querySelector("#cuisine_input_1").addEventListener("input", displaySecondCuisine);
+    document.querySelector("#included_ingredients_input_1").addEventListener("input", displaySecondIncludedIngredient);
+    document.querySelector(".advanced_search_button_cancel").addEventListener("click", closeAdvancedSearch);
+}
+
+
+if(document.querySelector("#report-button")) {
+    // Report
+    document.querySelector("#report-button").addEventListener("click", openReportPopup);
+    document.querySelector(".report_button_report").addEventListener("click", closeReportPopup);
+    document.querySelector(".report_button_cancel").addEventListener("click", closeReportPopup);
+    const reportReasons = document.querySelectorAll(".report_reason");
+}
+
+
+if(document.querySelector("#comment_input")) {
+    document.querySelector(".rating_input").addEventListener("click", () =>{
+        document.querySelector(".rating_input i").classList.toggle("fa-regular");
+        document.querySelector(".rating_input i").classList.toggle("fa-solid");
+    });
+
+    document.querySelector("#comment_input").addEventListener("keypress", (event)=> {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            console.log("HEYO")
+            document.querySelector(".newly_added_comment").classList.toggle("not_displayed");
+        }
+    });
+}
+
+// Increase and decrease of servings
+document.querySelector("#increase").addEventListener("click", increase);
+document.querySelector("#decrease").addEventListener("click", decrease);
+
+
+
 
 //############### COUNTER ###################//
 let data = 1;
@@ -67,18 +114,20 @@ ounceBtn.addEventListener('click', function () {
 
 });
 
+
+// Category pop up functions
 function toggleCategoryPopup() {
     document.querySelector(".category-popup").classList.toggle("hidden");
     setTimeout(() => {
         document.querySelector("#advanced_search").classList.toggle("not_displayed");
-    }, 50);
+    }, 500);
 }
 
 function toggleScroll() {
     document.body.classList.toggle("disable_scroll");
 }
 
-
+// Report pop up
 function openReportPopup() {
     document.querySelector(".report_modal").classList.toggle("not_displayed");
     toggleScroll();
@@ -92,15 +141,15 @@ function closeReportPopup () {
 // Add event listeners to the Report reasons
 reportReasons.forEach(reason => {
     reason.addEventListener("click", () => {
-        reason.classList.toggle("selected")
+        reason.classList.toggle("selected");
 
         if (document.querySelector(".report_button_report").classList.contains("report_button_report_disabled")) {
             document.querySelector(".report_button_report").disabled = false;
             document.querySelector(".report_button_report").classList.toggle("report_button_report_disabled");
             document.querySelector(".report_button_report").classList.toggle("report_button_report_enabled");
         }
-    })
-})
+    });
+});
 
 function displaySecondCuisine() {
     if (document.querySelector(".advanced_search_button_search").classList.contains("advanced_search_button_disabled")) {
@@ -128,7 +177,7 @@ function displayInputedIncludedIngredient() {
 }
 
 function openAdvancedSearch() {
-    console.log("HIT")
+    console.log("HIT");
     document.querySelector(".advanced_search_modal").classList.remove("not_displayed");
 }
 
