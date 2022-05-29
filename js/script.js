@@ -12,6 +12,10 @@ document.querySelector(".delete_profile_btn").addEventListener("click", toggleDe
 
 document.querySelector(".save").addEventListener("click", toggleSaveFill);
 
+document.querySelector("#report-button").addEventListener("click", openReportPopup);
+document.querySelector(".report_button_report").addEventListener("click", closeReportPopup);
+document.querySelector(".report_button_cancel").addEventListener("click", closeReportPopup);
+const reportReasons = document.querySelectorAll(".report_reason");
 document.querySelector("#increase").addEventListener("click", increase);
 document.querySelector("#decrease").addEventListener("click", decrease);
 
@@ -65,3 +69,30 @@ function openCategoryPopup() {
     document.querySelector(".category-popup").classList.toggle("hidden");
 }
 
+function toggleScroll() {
+    document.body.classList.toggle("disable_scroll");
+}
+
+
+function openReportPopup() {
+    document.querySelector(".report_modal").classList.toggle("not_displayed");
+    toggleScroll();
+}
+
+function closeReportPopup () {
+    document.querySelector(".report_modal").classList.toggle("not_displayed");
+    toggleScroll();
+}
+
+// Add event listeners to the Report reasons
+reportReasons.forEach(reason => {
+    reason.addEventListener("click", () => {
+        reason.classList.toggle("selected")
+
+        if (document.querySelector(".report_button_report").classList.contains("report_button_report_disabled")) {
+            document.querySelector(".report_button_report").disabled = false;
+            document.querySelector(".report_button_report").classList.toggle("report_button_report_disabled");
+            document.querySelector(".report_button_report").classList.toggle("report_button_report_enabled");
+        }
+    })
+})

@@ -920,6 +920,73 @@ img {
     font-size: 1rem;
 }
 
+/********************* REPORT RECIPE MODAL  *********************/
+.report_modal {
+    position: absolute;
+    width: 70vw;
+    top: 50%;
+    left: 15vw;
+    background-color: var(--colorBG);
+    padding: 1rem 2rem;
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+    max-width: 330px;
+}
+
+.report_reason {
+    margin-top: 1rem;
+}
+
+.report_reason {
+    cursor: pointer;
+    padding: 0.2rem 0 0rem 0.75rem;
+    border-radius: var(--borderRadius);
+}
+
+.report_reason:last-child {
+    margin-bottom: 2rem;
+}
+
+.report_button_report {
+    margin-right: 1rem;
+}
+
+.report_button_report_disabled {
+    background-color: var(--colorAD);
+    cursor: not-allowed;
+}
+
+.report_button_report_enabled {
+    background-color: var(--colorButton);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--colorButton);
+}
+
+.disable_scroll {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.enable_scroll {
+    max-height: none;
+    overflow: scroll;
+}
+
+@media only screen and (min-width: 480px){
+    .report_modal {
+        max-width: 330px;
+        left: 27.5%;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .report_modal {
+        left: 35%;
+    }
+}
 /********************* DELETE PROFILE MODAL *********************/
 
 #delete_modal{

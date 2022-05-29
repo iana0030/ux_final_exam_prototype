@@ -12,6 +12,30 @@
 </head>
 
 <body>
+    <!-- Report recipe modal -->
+    <div class="report_modal not_displayed">
+        <h3>Report recipe</h3>
+
+        <div class="report_reasons">
+            <div class="report_reason">
+                <p>Fake recipe</p>
+            </div>
+            <div class="report_reason">
+                <p>Toxic and poisonous recipe</p>
+            </div>
+            <div class="report_reason">
+                <p>Duplicate recipe</p>
+            </div>
+            <div class="report_reason">
+                <p>Other reasons</p>
+            </div>
+        </div>
+
+        <div class="report_buttons">
+            <button class="report_button_report report_button_report_disabled" disabled>Report</button>
+            <button class="report_button_cancel">Cancel</button>
+        </div>
+    </div>
 
     <section id="delete_modal" class="not_displayed">
         <div class="modal_bg"></div>
@@ -109,7 +133,7 @@
             <section>
                 <section class="recipe-details">
                     <div class="btn_container">
-                        <a href="#"><button><i class="fa-solid fa-flag"></i></button></a>
+                        <a href="#"><button><i class="fa-solid fa-flag" id="report-button"></i></button></a>
                         <a href="./edit-recipe.html"><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></a>
                         <a href="./profile-after-recipe-delete.html"><button class="delete"><i class="fa-solid fa-trash"></i></button></a>
                         <a href="#"><button class="save"><i class="fa-regular fa-bookmark"></i></button></a>
