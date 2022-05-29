@@ -10,7 +10,7 @@
     <title>Welcome to Delicacy Corner! A place for yummy recipes all around</title>
 </head>
 <body>
-    <!-- Popup window -->
+    <!-- Category modal -->
     <div class="category-popup hidden">
         <h3>Categories</h3>
 
@@ -22,6 +22,60 @@
         </div>
     </div>
 
+    <!-- Advanced search modal -->
+    <div class="advanced_search_modal not_displayed">
+        <div class="advanced_search_title">
+            <h2>Advanced Search</h2>
+        </div>
+
+        <div class="advanced_search_cuisines">
+            <h3>Cuisines</h3>
+            <input type="text" id="cuisine_input_1" placeholder="Cuisine name">
+            <input type="text" id="cuisine_input_2" class="not_displayed" placeholder="Cuisine name">
+            <p class="input_cuisine not_displayed">Asian</p>
+        </div>
+
+        <div class="included_ingredients">
+            <h3>Included ingredients</h3>
+            <input type="text" id="included_ingredients_input_1" placeholder="Ingredient name">
+            <input type="text" id="included_ingredients_input_2" class="not_displayed" placeholder="Ingredient name">
+            <p class="input_included_ingredients not_displayed">Egg</p>
+        </div>
+
+        <div class="excluded_ingredients">
+            <h3>Excluded ingredients</h3>
+            <input type="text" id="excluded_ingredients_input" placeholder="Ingredient name">
+        </div>
+
+        <div class="diet">
+            <h3>Diet</h3>
+
+            <div class="diet_list">
+                <div>
+                    <label for="omnivorous">Omnivorous</label>
+                    <input type="checkbox" name="omnivorous" id="omnivorous">
+                </div>
+                
+                <div>
+                    <label for="vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="vegetarian" id="vegetarian">
+                </div>
+                
+                <div>
+                    <label for="vegan">Vegan</label>
+                    <input type="checkbox" name="vegan" id="vegan">
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced_search_buttons">
+            <a href="./category-recipes-page.html">
+                <button class="advanced_search_button_search advanced_search_button_disabled">Search</button>
+            </a>
+            <button class="advanced_search_button_cancel">Cancel</button>
+        </div>
+    </div>
+    
     <header>
         <nav>
             <div class="desktop_nav">
@@ -38,11 +92,15 @@
                     </ul>
                 </div>
                 <a href="./recipe.html"><i class="fa-solid fa-lightbulb"></i>Inspiration</a>
-                <div class="searchBar">
-                    <input type="text" placeholder="Search for a recipe">
-                    <button class="search_btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                <div class="search_section">
+                    <div class="searchBar">
+                        <input type="text" placeholder="Search for a recipe">
+                        <button class="search_btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div class="not_displayed" id="advanced_search">Advanced Search</div>
                 </div>
                 <div class="account_utility">
                     <a href="./login.html">Login</a>

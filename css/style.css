@@ -335,6 +335,68 @@ button {
 }
 
 /********************* HOMEPAGE *********************/
+.advanced_search_modal {
+    position: absolute;
+    top: 10vh;
+    width: 90vw;
+    margin-left: 5vw;
+    padding:  1rem 2rem;
+    background-color: var(--colorBG);
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+}
+
+.advanced_search_modal > div {
+    margin: 1rem 0;
+}
+
+.input_cuisine, .input_included_ingredients {
+    margin: 0.5rem 0 1rem 0;
+    background-color: var(--colorButtonHover);
+    max-width: 8vw;
+    text-align: center;
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+}
+
+.advanced_search_modal > div > input {
+    border: 1px solid darkslategray;
+    width: 45%;
+}
+
+.advanced_search_modal > div > input::placeholder {
+    color: darkslategray;
+}
+
+.diet_list > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.diet_list > div > label {
+    display: block;
+    width: 15vw;
+}
+
+.advanced_search_button_disabled {
+    background-color: var(--colorAD);
+    cursor: not-allowed;
+}
+
+.advanced_search_button_enabled {
+    background-color: var(--colorButton);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 510px){
+    .advanced_search_modal {
+        max-width: 460px;
+        left: calc(100% / 2 - 460px / 2 - 50px);   
+    }
+}
+
+/********************* HOMEPAGE *********************/
 
 .not_displayed {
     display: none;
@@ -1090,6 +1152,16 @@ img {
         gap: 0.3rem;
     }
 
+    #advanced_search {
+        padding-top: 0.5rem;
+        width: 90%;
+        text-align: center;
+        font-family: var(--fontHeadings);
+        font-weight: var(--fontWeightHeadings);  
+        color: var(--colorNavTxt);
+        cursor: pointer;
+    } 
+
     footer {
         justify-content: space-evenly;
         padding-top: 5rem;
@@ -1116,7 +1188,7 @@ img {
 
     .category-popup {
         left: 58vw;
-        top: 10vh;
+        top: 12vh;
         width: 15vw;
     }
     /********************* HOMEPAGE *********************/
