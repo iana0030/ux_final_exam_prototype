@@ -335,6 +335,68 @@ button {
 }
 
 /********************* HOMEPAGE *********************/
+.advanced_search_modal {
+    position: absolute;
+    top: 10vh;
+    width: 90vw;
+    margin-left: 5vw;
+    padding:  1rem 2rem;
+    background-color: var(--colorBG);
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+}
+
+.advanced_search_modal > div {
+    margin: 1rem 0;
+}
+
+.input_cuisine, .input_included_ingredients {
+    margin: 0.5rem 0 1rem 0;
+    background-color: var(--colorButtonHover);
+    max-width: 8vw;
+    text-align: center;
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+}
+
+.advanced_search_modal > div > input {
+    border: 1px solid darkslategray;
+    width: 45%;
+}
+
+.advanced_search_modal > div > input::placeholder {
+    color: darkslategray;
+}
+
+.diet_list > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.diet_list > div > label {
+    display: block;
+    width: 15vw;
+}
+
+.advanced_search_button_disabled {
+    background-color: var(--colorAD);
+    cursor: not-allowed;
+}
+
+.advanced_search_button_enabled {
+    background-color: var(--colorButton);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 510px){
+    .advanced_search_modal {
+        max-width: 460px;
+        left: calc(100% / 2 - 460px / 2 - 50px);   
+    }
+}
+
+/********************* HOMEPAGE *********************/
 
 .not_displayed {
     display: none;
@@ -920,6 +982,73 @@ img {
     font-size: 1rem;
 }
 
+/********************* REPORT RECIPE MODAL  *********************/
+.report_modal {
+    position: absolute;
+    width: 70vw;
+    top: 50%;
+    left: 15vw;
+    background-color: var(--colorBG);
+    padding: 1rem 2rem;
+    border: var(--borderProperties);
+    border-radius: var(--borderRadius);
+    max-width: 330px;
+}
+
+.report_reason {
+    margin-top: 1rem;
+}
+
+.report_reason {
+    cursor: pointer;
+    padding: 0.2rem 0 0rem 0.75rem;
+    border-radius: var(--borderRadius);
+}
+
+.report_reason:last-child {
+    margin-bottom: 2rem;
+}
+
+.report_button_report {
+    margin-right: 1rem;
+}
+
+.report_button_report_disabled {
+    background-color: var(--colorAD);
+    cursor: not-allowed;
+}
+
+.report_button_report_enabled {
+    background-color: var(--colorButton);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--colorButton);
+}
+
+.disable_scroll {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.enable_scroll {
+    max-height: none;
+    overflow: scroll;
+}
+
+@media only screen and (min-width: 480px){
+    .report_modal {
+        max-width: 330px;
+        left: 27.5%;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .report_modal {
+        left: 35%;
+    }
+}
 /********************* DELETE PROFILE MODAL *********************/
 
 #delete_modal{
@@ -1023,6 +1152,16 @@ img {
         gap: 0.3rem;
     }
 
+    #advanced_search {
+        padding-top: 0.5rem;
+        width: 90%;
+        text-align: center;
+        font-family: var(--fontHeadings);
+        font-weight: var(--fontWeightHeadings);  
+        color: var(--colorNavTxt);
+        cursor: pointer;
+    } 
+
     footer {
         justify-content: space-evenly;
         padding-top: 5rem;
@@ -1049,7 +1188,7 @@ img {
 
     .category-popup {
         left: 58vw;
-        top: 10vh;
+        top: 12vh;
         width: 15vw;
     }
     /********************* HOMEPAGE *********************/
