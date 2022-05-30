@@ -67,16 +67,9 @@ let starIndex = 0;
 
 if(document.querySelector("#comment_input")) {
     document.querySelectorAll(".rating_input .fa-star").forEach(star => {
-        // Increment star index
+        // Add event listener to rate stars
         star.addEventListener("click", () => {
-            if (star.classList.contains("fa-regular")) {
-                console.log("hit")
-                changePreviousStars(star);
-            } else if (star.classList.contains("fa-solid")) {
-                changeAfterStars(star);
-            }
-            // changePreviousStars(star);
-            // changeAfterStars(star);
+            changeStars(star);
         })
     });
 
@@ -88,38 +81,24 @@ if(document.querySelector("#comment_input")) {
     });
 }
 
-// Function for changing previous stars than clicked one to black  
-// Clicked star is passed to a function. Function loops through all of the stars and checks them if they are equal to the passed star.
-// If the star is not the same, it is changed to black and loop continues.
-// If the star is the same, it is changed to black and loop stops.
-function changePreviousStars(starClicked) {
+// Function for changing stars
+// Clicked star is passed to the function. It stars comparing the NodeList of stars to the passed star. 
+// If the star is different, that means that is not clicked star and it becomes blackened.
+// If the star is equal, that means that is clicked star, it becomes blackened and all other stars are becoming whitened.
+function changeStars(starClicked) {
     let notfound = true;
     document.querySelectorAll(".rating_input .fa-star").forEach(star => {
         if (notfound) {
             if (star != starClicked) {
-                if (!star.classList.contains("fa-solid")) {
+                if (star.classList.contains("fa-regular")) {
+                    star.classList.toggle("fa-regular");
                     star.classList.toggle("fa-solid");
                 }
-                star.classList.toggle("fa-regular");
             } else {
-                star.classList.toggle("fa-regular");
-                star.classList.toggle("fa-solid");
-                notfound = false;
-            }
-        }
-    })
-}
-
-// Function for changing after stars than clicked one to black
-// Clicked star is passed to a function. Function loops through all of the stars and checks them if they are equal to the passed star.
-// If the black star is not equal to the passed star, the black star is ignored.
-// If the black star is equal to the passed star, the passed star is ignored, but the rest of the stars are changed to white stars if they are black.
-// If the white stars are located after clicked/passed star, they are ignored. 
-function changeAfterStars(starClicked) {
-    let notfound = true;
-    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
-        if (notfound) {
-            if (star == starClicked) {
+                if (star.classList.contains("fa-regular")) {
+                    star.classList.toggle("fa-regular");
+                    star.classList.toggle("fa-solid");
+                }
                 notfound = false;
             }
         } else {
