@@ -63,11 +63,15 @@ if(document.querySelector("#report-button")) {
 }
 
 // Comment and rating
+let starIndex = 0;
+
 if(document.querySelector("#comment_input")) {
-    document.querySelectorAll(".rating_input .fa-star").forEach(star => {star.addEventListener("click", () =>{
-        star.classList.toggle("fa-regular");
-        star.classList.toggle("fa-solid");
-    })});
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
+        // Add event listener to rate stars
+        star.addEventListener("click", () => {
+            changeStars(star);
+        })
+    });
 
     document.querySelector("#comment_input").addEventListener("keypress", (event)=> {
         if (event.keyCode === 13) {
@@ -75,6 +79,37 @@ if(document.querySelector("#comment_input")) {
             document.querySelector(".newly_added_comment").classList.toggle("not_displayed");
         }
     });
+}
+
+// Function for changing stars
+// Clicked star is passed to the function. It stars comparing the NodeList of stars to the passed star. 
+// If the star is different, that means that is not clicked star and it becomes blackened.
+// If the star is equal, that means that is clicked star, it becomes blackened and all other stars are becoming whitened.
+function changeStars(starClicked) {
+    let notfound = true;
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
+        if (notfound) {
+            if (star != starClicked) {
+                if (star.classList.contains("fa-regular")) {
+                    star.classList.toggle("fa-regular");
+                    star.classList.toggle("fa-solid");
+                }
+            } else {
+                if (star.classList.contains("fa-regular")) {
+                    star.classList.toggle("fa-regular");
+                    star.classList.toggle("fa-solid");
+                }
+                notfound = false;
+            }
+        } else {
+            if (star.classList.contains("fa-solid")) {
+                star.classList.toggle("fa-solid");    
+            }
+            if (!star.classList.contains("fa-regular")) {
+                star.classList.toggle("fa-regular");
+            }
+        }
+    })
 }
 
 // Increase and decrease of servings
