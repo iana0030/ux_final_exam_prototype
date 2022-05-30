@@ -62,17 +62,16 @@ if(document.querySelector("#report-button")) {
     const reportReasons = document.querySelectorAll(".report_reason");
 }
 
-
+// Comment and rating
 if(document.querySelector("#comment_input")) {
-    document.querySelector(".rating_input").addEventListener("click", () =>{
-        document.querySelector(".rating_input i").classList.toggle("fa-regular");
-        document.querySelector(".rating_input i").classList.toggle("fa-solid");
-    });
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {star.addEventListener("click", () =>{
+        star.classList.toggle("fa-regular");
+        star.classList.toggle("fa-solid");
+    })});
 
     document.querySelector("#comment_input").addEventListener("keypress", (event)=> {
         if (event.keyCode === 13) {
             event.preventDefault();
-            console.log("HEYO")
             document.querySelector(".newly_added_comment").classList.toggle("not_displayed");
         }
     });
