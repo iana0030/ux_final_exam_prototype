@@ -230,6 +230,36 @@ footer {
     font-size: 0.8rem;
 }
 
+/********************* BREADCRUMB *********************/
+.breadcrumb_trail {
+    font-size: 0.8rem;
+    font-family: var(--fontBodyText);
+    font-weight: var(--fontWeightBodyTxt);
+    padding: 1rem;
+    list-style: none;
+}
+
+.breadcrumb_trail li {
+    display: inline;
+    color: var(--colorBodyTxt);
+}
+
+.breadcrumb_trail li a {
+    text-decoration: none;
+    color: var(--colorBreadcrumb);
+}
+
+.breadcrumb_trail li a:hover {
+    color: var(--colorBreadcrumbHover);
+    transition: .5s;
+}
+
+.breadcrumb_trail li+li:before{
+    padding: .2rem;
+    content: "/\00a0";
+    color: var(--colorBreadcrumbHover);
+}
+
 /********************* TEXT RELATED *********************/
 
 h1, h2, h3 {
