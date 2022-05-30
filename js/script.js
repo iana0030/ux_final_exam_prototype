@@ -63,11 +63,22 @@ if(document.querySelector("#report-button")) {
 }
 
 // Comment and rating
+let starIndex = 0;
+
 if(document.querySelector("#comment_input")) {
-    document.querySelectorAll(".rating_input .fa-star").forEach(star => {star.addEventListener("click", () =>{
-        star.classList.toggle("fa-regular");
-        star.classList.toggle("fa-solid");
-    })});
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
+        // Increment star index
+        star.addEventListener("click", () => {
+            if (star.classList.contains("fa-regular")) {
+                console.log("hit")
+                changePreviousStars(star);
+            } else if (star.classList.contains("fa-solid")) {
+                changeAfterStars(star);
+            }
+            // changePreviousStars(star);
+            // changeAfterStars(star);
+        })
+    });
 
     document.querySelector("#comment_input").addEventListener("keypress", (event)=> {
         if (event.keyCode === 13) {
@@ -75,6 +86,51 @@ if(document.querySelector("#comment_input")) {
             document.querySelector(".newly_added_comment").classList.toggle("not_displayed");
         }
     });
+}
+
+// Function for changing previous stars than clicked one to black  
+// Clicked star is passed to a function. Function loops through all of the stars and checks them if they are equal to the passed star.
+// If the star is not the same, it is changed to black and loop continues.
+// If the star is the same, it is changed to black and loop stops.
+function changePreviousStars(starClicked) {
+    let notfound = true;
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
+        if (notfound) {
+            if (star != starClicked) {
+                if (!star.classList.contains("fa-solid")) {
+                    star.classList.toggle("fa-solid");
+                }
+                star.classList.toggle("fa-regular");
+            } else {
+                star.classList.toggle("fa-regular");
+                star.classList.toggle("fa-solid");
+                notfound = false;
+            }
+        }
+    })
+}
+
+// Function for changing after stars than clicked one to black
+// Clicked star is passed to a function. Function loops through all of the stars and checks them if they are equal to the passed star.
+// If the black star is not equal to the passed star, the black star is ignored.
+// If the black star is equal to the passed star, the passed star is ignored, but the rest of the stars are changed to white stars if they are black.
+// If the white stars are located after clicked/passed star, they are ignored. 
+function changeAfterStars(starClicked) {
+    let notfound = true;
+    document.querySelectorAll(".rating_input .fa-star").forEach(star => {
+        if (notfound) {
+            if (star == starClicked) {
+                notfound = false;
+            }
+        } else {
+            if (star.classList.contains("fa-solid")) {
+                star.classList.toggle("fa-solid");    
+            }
+            if (!star.classList.contains("fa-regular")) {
+                star.classList.toggle("fa-regular");
+            }
+        }
+    })
 }
 
 // Increase and decrease of servings
