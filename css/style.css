@@ -737,6 +737,11 @@ img {
     background-color: var(--colorAD);
 }
 
+.time_published {
+    font-size: .8rem;
+    text-align: center;
+}
+
 
 /********************* COUNTER *********************/
 
@@ -753,7 +758,6 @@ img {
 
 .inc-dec {
     width: 4rem;
-    border-radius: none;
 }
 
 .counting {
