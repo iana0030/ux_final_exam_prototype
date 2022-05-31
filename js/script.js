@@ -70,7 +70,7 @@ if(document.querySelector("#comment_input")) {
         // Add event listener to rate stars
         star.addEventListener("click", () => {
             changeStars(star);
-        })
+        });
     });
 
     document.querySelector("#comment_input").addEventListener("keypress", (event)=> {
@@ -109,7 +109,7 @@ function changeStars(starClicked) {
                 star.classList.toggle("fa-regular");
             }
         }
-    })
+    });
 }
 
 // Increase and decrease of servings
