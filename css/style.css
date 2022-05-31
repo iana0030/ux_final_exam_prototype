@@ -893,6 +893,10 @@ img {
     padding: 0;
 }
 
+#create_recipe_page .recipe_info_input select{
+    width: 40vw;
+}
+
 /********************* EDIT RECIPE PAGE *********************/
 
 #edit_recipe_page hr {
@@ -963,6 +967,10 @@ img {
     font-size: 1.5rem;
     background-color: transparent;
     padding: 0;
+}
+
+#edit_recipe_page .recipe_info_input select{
+    width: 40vw;
 }
 
 
@@ -1374,6 +1382,7 @@ img {
 
     #create_recipe_page .recipe_content_input {
         display: flex;
+        justify-content: space-around;
         gap: 5rem;
     }
     #create_recipe_page .recipe_content_input fieldset{
@@ -1430,6 +1439,7 @@ img {
 
     #edit_recipe_page .recipe_content_input {
         display: flex;
+        justify-content: space-around;
         gap: 5rem;
     }
     #edit_recipe_page .recipe_content_input fieldset{
